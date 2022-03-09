@@ -13,7 +13,8 @@ class WanyiSpider(scrapy.Spider):
     # start_urls = ['http://war.163.com/']
     # url_list = []
     custom_settings = {
-        'ITEM_PIPELINES': {'Crawl_hyx.pipelines.WanyiPipeline': 300},
+        'ITEM_PIPELINES': {'Crawl_hyx.pipelines.WanyiPipeline': 400,
+                            'Crawl_hyx.pipelines.ImagePipeline': 500},
     }
 
     #实例化一个浏览器对象
@@ -88,15 +89,19 @@ class WanyiSpider(scrapy.Spider):
                 content1 = cont.replace(chr(10), ' ')
                 cont = content1.replace('\"', '\'')
                 content = cont.replace('\\', '')
+                content = content.replace(' ', '')
         except:
             content = ""
         followNum = response.xpath('//*[@id="contain"]/div[2]/div[1]/div[4]/span[2]/a/em//text()').extract_first()
         author = response.xpath('//*[@id="contain"]/div[1]/div[2]/a[1]//text()').extract_first()
         pubTime = response.xpath('//*[@id="contain"]/div[1]/div[2]//text()').extract_first()
+        pubTime = pubTime.replace('\n', '')
+        pubTime = pubTime.replace(' ', '')
         readNum = response.xpath('//*[@id="tieArea"]/div[1]/div/a[2]//text()').extract_first()
         retweetNum = response.xpath('//*[@id="tieArea"]/div[1]/div/a[1]//text()').extract_first()
         url = response.xpath('//*[@id="ne_wrap"]/head/link[5]/@href').extract_first()
         # print(response.text)
+
         item = WanyiItem()
         item['source'] = '网易军事'
         item['regTime'] = ''
@@ -110,6 +115,20 @@ class WanyiSpider(scrapy.Spider):
         item['readNum'] = readNum
         item['retweetNum'] = retweetNum
         item['url'] = url
+
+        # 获取图片
+        img_url = dict()
+        cnt = 0
+        images_url = response.xpath('//*[@id="content"]/div[2]/p[@class="f_center"]')
+        image_urls = response.xpath('//*[@id="content"]/div[2]/p[@class="f_center"]/img/@src').extract()
+        # print(image_urls)
+        for image_url in images_url:
+            image_url = image_url.xpath('./img/@src').extract_first()
+            cnt = cnt + 1
+            img_url["图片" + str(cnt)] = str(image_url)
+            time.sleep(2)
+        # print(img_url)
+        item['img_url'] = image_urls
         #
         yield item
 

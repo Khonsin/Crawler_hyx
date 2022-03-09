@@ -159,16 +159,19 @@ class BaidubaikePipeline:
 class ImagePipeline(ImagesPipeline):
     #图片地址请求
     def get_media_requests(self, item, info):
-        if 'attributes' in item:
-            for url in item['attributes']:
-                yield scrapy.Request(url)
+        # print(item['img_url'])
+        for url in item['img_url']:
+            # print(url)
+            yield scrapy.Request(url)
+
     # 保存图片时重命名
     def item_completed(self, results, item, info):
         # print(results)
         # print("*"* 30)
         # 列表推导式，获取图片的保存路径
         image_url = [x["path"] for ok, x in results if ok]
+        print(image_url[0])
 
         # 重命名，由于都是jpg文件，所以直接拼上了
-        os.rename(SavePath+image_url[0], SavePath + item["keyword"] + ".jpg")
+        os.rename(SavePath+image_url[0], SavePath + item["title"] + ".jpg")
         return item

@@ -24,6 +24,7 @@ class WanyiItem(scrapy.Item):
     readNum = scrapy.Field()  #阅读数
     retweetNum = scrapy.Field()  #转发数
     url = scrapy.Field()  #链接
+    img_url = scrapy.Field() #图片链接
 
 class TengxunItem(scrapy.Item):
     source = scrapy.Field()  #情报源
@@ -70,4 +71,4 @@ class BaidubaikeItem(scrapy.Item):
 
 class ImageItem(scrapy.Item):
     image_urls = scrapy.Field()
-    keyword = scrapy.Field()
+    title = scrapy.Field()

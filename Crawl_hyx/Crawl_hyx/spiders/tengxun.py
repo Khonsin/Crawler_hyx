@@ -11,7 +11,8 @@ class TengxunSpider(scrapy.Spider):
     # allowed_domains = ['new.qq.com/ch/milite/']
     # start_urls = ['https://new.qq.com/ch/milite/']
     custom_settings = {
-        'ITEM_PIPELINES': {'Crawl_hyx.pipelines.TengxunPipeline': 400},
+        'ITEM_PIPELINES': {'Crawl_hyx.pipelines.TengxunPipeline': 300,
+                            'Crawl_hyx.pipelines.ImagePipeline': 300},
     }
 
     # 实例化一个浏览器对象

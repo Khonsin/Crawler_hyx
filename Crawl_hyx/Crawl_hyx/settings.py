@@ -20,7 +20,7 @@ NEWSPIDER_MODULE = 'Crawl_hyx.spiders'
 USER_AGENT_LIST = [
    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36",
    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",
-   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",
+   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36",
 ]
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -77,6 +77,8 @@ ITEM_PIPELINES = {
     # 'Crawl_hyx.pipelines.BaidubaikePipeline': 400,  #数值越小，优先级越高
 
 }
+Base_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+IMAGES_STORE = os.path.join(Base_DIR, 'image')
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
