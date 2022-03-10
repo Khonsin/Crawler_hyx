@@ -153,6 +153,7 @@ class TengxunSpider(scrapy.Spider):
         #         with open(result + '/tengxun/' + title + '.mp4', 'wb') as f:
         #             f.write(data)
         #             print('%s下载成功' % title)
+        #             f.close()
         #     except:
         #         break
         yield item

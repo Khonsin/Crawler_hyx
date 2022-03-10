@@ -14,6 +14,7 @@ BOT_NAME = 'Crawl_hyx'
 SPIDER_MODULES = ['Crawl_hyx.spiders']
 NEWSPIDER_MODULE = 'Crawl_hyx.spiders'
 
+COMMANDS_MODULE = 'Crawl_hyx.commands'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36'
@@ -71,7 +72,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    # 'Crawl_hyx.pipelines.WanyiPipeline': 300,  #数值越小，优先级越高
+    # 'Crawl_hyx.pipelines.WangyiPipeline': 300,  #数值越小，优先级越高
     # 'Crawl_hyx.pipelines.TengxunPipeline': 400,  #数值越小，优先级越高
     # 'Crawl_hyx.pipelines.BaiduPipeline': 500,  #数值越小，优先级越高
     # 'Crawl_hyx.pipelines.BaidubaikePipeline': 400,  #数值越小，优先级越高

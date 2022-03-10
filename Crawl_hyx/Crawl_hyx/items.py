@@ -11,7 +11,7 @@ class CrawlHyxItem(scrapy.Item):
     # name = scrapy.Field()
     pass
 
-class WanyiItem(scrapy.Item):
+class WangyiItem(scrapy.Item):
     source = scrapy.Field()  #情报源
     regTime = scrapy.Field()  #情报源注册时长
     followNum = scrapy.Field()  #情报源关注者数目

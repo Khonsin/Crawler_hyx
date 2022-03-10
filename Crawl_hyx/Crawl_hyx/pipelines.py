@@ -47,9 +47,9 @@ class CrawlHyxPipeline:
     def process_item(self, item, spider):
         return item
 
-class WanyiPipeline:
+class WangyiPipeline:
     def __init__(self):
-        self.tag = 'wanyi'
+        self.tag = 'wangyi'
         self.file = CreatePath(SavePath, self.tag)
         self.data = []
         self.count = 0
