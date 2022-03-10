@@ -1,0 +1,998 @@
+2022-03-10 17:18:51 [scrapy.utils.log] INFO: Scrapy 2.5.1 started (bot: Crawl_hyx)
+2022-03-10 17:18:51 [scrapy.utils.log] INFO: Versions: lxml 4.7.1.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.1.0, Python 3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 1.1.1m  14 Dec 2021), cryptography 36.0.1, Platform Windows-10-10.0.19044-SP0
+2022-03-10 17:18:51 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2022-03-10 17:18:51 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'Crawl_hyx',
+ 'LOG_FILE': 'log/scrapy_2022_3_10_9.log',
+ 'NEWSPIDER_MODULE': 'Crawl_hyx.spiders',
+ 'SPIDER_MODULES': ['Crawl_hyx.spiders']}
+2022-03-10 17:18:51 [scrapy.extensions.telnet] INFO: Telnet Password: 714c4048a7cc1c89
+2022-03-10 17:18:51 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 17:18:51 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "pageLoadStrategy": "normal", "goog:chromeOptions": {"extensions": [], "args": ["--headless", "--disable-gpu", "--no-sandbox"]}}}, "desiredCapabilities": {"browserName": "chrome", "pageLoadStrategy": "normal", "goog:chromeOptions": {"extensions": [], "args": ["--headless", "--disable-gpu", "--no-sandbox"]}}}
+2022-03-10 17:18:51 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): localhost:60195
+2022-03-10 17:18:52 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session HTTP/1.1" 200 796
+2022-03-10 17:18:52 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:18:52 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 1000}
+2022-03-10 17:18:52 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:18:52 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:18:52 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'Crawl_hyx.middlewares.CrawlHyxDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 17:18:52 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 17:18:52 [scrapy.middleware] INFO: Enabled item pipelines:
+['Crawl_hyx.pipelines.TengxunPipeline', 'Crawl_hyx.pipelines.ImagePipeline']
+2022-03-10 17:18:52 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 17:18:52 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 17:18:52 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-03-10 17:18:52 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/ch/milite/"}
+2022-03-10 17:18:55 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:18:55 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:18:57 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:18:57 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 89838
+2022-03-10 17:18:57 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:18:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/ch/milite/> (referer: None)
+2022-03-10 17:18:57 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/ch/milite/"}
+2022-03-10 17:18:58 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:18:58 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:18:58 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync {"script": "return document.body.scrollHeight;", "args": []}
+2022-03-10 17:18:58 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:18:58 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:00 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 17:19:00 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:19:00 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:02 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 17:19:02 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:19:02 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:04 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 17:19:04 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:19:04 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:06 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 17:19:06 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:19:06 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:08 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 17:19:08 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:19:08 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:10 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 17:19:10 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:19:10 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:10 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync {"script": "return document.body.scrollHeight;", "args": []}
+2022-03-10 17:19:10 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:19:10 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:11 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06UPS00.html"}
+2022-03-10 17:19:12 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:12 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:14 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:14 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 96688
+2022-03-10 17:19:14 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A06UPS00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:14 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A061WZ00.html"}
+2022-03-10 17:19:15 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:17 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:17 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 67016
+2022-03-10 17:19:17 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A061WZ00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:17 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06UPS00.html"}
+2022-03-10 17:19:18 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:18 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:18 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:19:18 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:19:18 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:18 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A06UPS00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611715698/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611715698/1000?
+2022-03-10 17:19:18 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A0638V00.html"}
+2022-03-10 17:19:19 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:19 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:21 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:21 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 51407
+2022-03-10 17:19:21 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A0638V00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:21 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A061WZ00.html"}
+2022-03-10 17:19:22 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:22 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:22 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:19:22 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:19:22 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:22 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A061WZ00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611450237/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611450237/1000?
+2022-03-10 17:19:22 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A060EC00.html"}
+2022-03-10 17:19:23 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:23 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:25 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:25 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 131991
+2022-03-10 17:19:25 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A060EC00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:25 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A050U800.html"}
+2022-03-10 17:19:26 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:26 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:28 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:28 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 55134
+2022-03-10 17:19:28 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A050U800.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:28 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A056XJ00.html"}
+2022-03-10 17:19:28 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:28 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:30 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:30 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 54273
+2022-03-10 17:19:30 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A056XJ00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:30 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A04T0G00.html"}
+2022-03-10 17:19:31 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:31 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:33 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:33 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 54122
+2022-03-10 17:19:33 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A04T0G00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:33 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A051ZK00.html"}
+2022-03-10 17:19:34 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:34 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:36 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:36 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 53940
+2022-03-10 17:19:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A051ZK00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A05ZYS00.html"}
+2022-03-10 17:19:37 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:37 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:39 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:39 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 159831
+2022-03-10 17:19:39 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A05ZYS00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:39 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET http://new.qq.com/notfound.htm?uri=http://new.qq.com/omn/DSG20220/DSG2022031000589600.html> from <GET https://new.qq.com/omn/DSG20220/DSG2022031000589600.html>
+2022-03-10 17:19:39 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A069WP00.html"}
+2022-03-10 17:19:40 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:40 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:42 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:42 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 57388
+2022-03-10 17:19:42 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A069WP00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:42 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A0638V00.html"}
+2022-03-10 17:19:43 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:43 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:43 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:19:43 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:19:43 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:43 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A0638V00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611464144/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611464144/1000?
+2022-03-10 17:19:43 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A060EC00.html"}
+2022-03-10 17:19:43 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:43 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:43 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:19:43 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:19:43 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:44 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A060EC00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611445402/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611445402/1000?
+2022-03-10 17:19:44 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A050U800.html"}
+2022-03-10 17:19:44 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:44 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:44 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:19:44 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:19:44 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:44 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A050U800.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611122013/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611122013/1000?
+2022-03-10 17:19:44 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A056XJ00.html"}
+2022-03-10 17:19:45 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:45 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:45 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:19:45 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:19:45 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:45 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A056XJ00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611173357/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611173357/1000?
+2022-03-10 17:19:45 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A04T0G00.html"}
+2022-03-10 17:19:46 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:46 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:46 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:19:46 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:19:46 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:46 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A04T0G00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611054071/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611054071/1000?
+2022-03-10 17:19:46 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A051ZK00.html"}
+2022-03-10 17:19:46 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:46 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:46 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:19:46 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:19:46 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:46 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A051ZK00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611134082/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611134082/1000?
+2022-03-10 17:19:46 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A05ZYS00.html"}
+2022-03-10 17:19:47 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:47 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:47 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:19:47 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:19:47 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:47 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A05ZYS00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611410156/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611410156/1000?
+2022-03-10 17:19:47 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06FVG00.html"}
+2022-03-10 17:19:48 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:48 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:50 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:50 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 56841
+2022-03-10 17:19:50 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A06FVG00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:50 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06GFM00.html"}
+2022-03-10 17:19:51 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:51 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:53 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:53 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 71232
+2022-03-10 17:19:53 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A06GFM00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:53 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06FSV00.html"}
+2022-03-10 17:19:53 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:53 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:55 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:55 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 58717
+2022-03-10 17:19:55 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A06FSV00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:55 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06GKA00.html"}
+2022-03-10 17:19:56 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:56 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:58 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:19:58 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 70442
+2022-03-10 17:19:58 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:19:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A06GKA00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:19:58 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06HOH00.html"}
+2022-03-10 17:19:59 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:19:59 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:01 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:20:01 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 55015
+2022-03-10 17:20:01 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A06HOH00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:20:01 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06TWK00.html"}
+2022-03-10 17:20:02 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:20:02 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:04 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:20:04 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 113795
+2022-03-10 17:20:04 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A06TWK00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:20:04 [scrapy.extensions.logstats] INFO: Crawled 17 pages (at 17 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 17:20:04 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A069WP00.html"}
+2022-03-10 17:20:05 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:20:05 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:05 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:20:05 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:20:05 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:05 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A069WP00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611533422/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611533422/1000?
+2022-03-10 17:20:05 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06FVG00.html"}
+2022-03-10 17:20:06 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:20:06 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:06 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:20:06 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:20:06 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:06 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A06FVG00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611588009/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611588009/1000?
+2022-03-10 17:20:06 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06GFM00.html"}
+2022-03-10 17:20:06 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:20:06 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:06 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:20:06 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:20:06 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:06 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A06GFM00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611592335/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611592335/1000?
+2022-03-10 17:20:06 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06FSV00.html"}
+2022-03-10 17:20:07 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:20:07 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:07 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:20:07 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:20:07 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:07 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A06FSV00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611587117/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611587117/1000?
+2022-03-10 17:20:07 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06GKA00.html"}
+2022-03-10 17:20:08 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:20:08 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:08 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:20:08 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:20:08 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:08 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A06GKA00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611594474/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611594474/1000?
+2022-03-10 17:20:08 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06HOH00.html"}
+2022-03-10 17:20:09 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:20:09 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:09 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:20:09 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:20:09 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:09 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A06HOH00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 130, in parse_detail
+    res = requests.get(image_url, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 515, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\sessions.py", line 443, in prepare_request
+    p.prepare(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 318, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\requests\models.py", line 392, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//inews.gtimg.com/newsapp_bt/0/14611600675/1000': No scheme supplied. Perhaps you meant http:////inews.gtimg.com/newsapp_bt/0/14611600675/1000?
+2022-03-10 17:20:09 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://new.qq.com/notfound.htm?uri=http://new.qq.com/omn/DSG20220/DSG2022031000589600.html> from <GET http://new.qq.com/notfound.htm?uri=http://new.qq.com/omn/DSG20220/DSG2022031000589600.html>
+2022-03-10 17:20:09 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/omn/20220310/20220310A06TWK00.html"}
+2022-03-10 17:20:10 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:20:10 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:10 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:20:10 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:20:10 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://new.qq.com/omn/20220310/20220310A06TWK00.html>
+{'author': '环球网',
+ 'content': '【环球网报道】据俄罗斯卫星通讯社10日报道，当地时间10日上午，俄罗斯外长拉夫罗夫和乌克兰外长库列巴在土耳其安塔利亚开始举行会谈。这是自2月24日俄罗斯对乌克兰发动特别军事行动以来，俄乌高层首次直接接触。免责声明：本文来自腾讯新闻客户端创作者，不代表腾讯网的观点和立场。',
+ 'followNum': '',
+ 'fromWhere': '',
+ 'img_url': [],
+ 'pubTime': '2022/03/10 16:28',
+ 'readNum': '',
+ 'regTime': '',
+ 'retweetNum': '',
+ 'source': '腾讯军事',
+ 'timestamp': '20220310172010',
+ 'title': '开战后首次高层直接接触！俄乌外长在土耳其开始会谈',
+ 'url': 'https://new.qq.com/omn/20220310/20220310A06TWK00.html'}
+2022-03-10 17:20:10 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/notfound.htm?uri=http://new.qq.com/omn/DSG20220/DSG2022031000589600.html"}
+2022-03-10 17:20:12 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:20:12 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:14 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/source {}
+2022-03-10 17:20:14 [urllib3.connectionpool] DEBUG: http://localhost:60195 "GET /session/3dc6747b87d0e2948794ff784f30b3f9/source HTTP/1.1" 200 10959
+2022-03-10 17:20:14 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/notfound.htm?uri=http://new.qq.com/omn/DSG20220/DSG2022031000589600.html> (referer: None)
+2022-03-10 17:20:14 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/url {"url": "https://new.qq.com/notfound.htm?uri=http://new.qq.com/omn/DSG20220/DSG2022031000589600.html"}
+2022-03-10 17:20:16 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/url HTTP/1.1" 200 14
+2022-03-10 17:20:16 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:16 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9/timeouts {"implicit": 10000}
+2022-03-10 17:20:16 [urllib3.connectionpool] DEBUG: http://localhost:60195 "POST /session/3dc6747b87d0e2948794ff784f30b3f9/timeouts HTTP/1.1" 200 14
+2022-03-10 17:20:16 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:16 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/notfound.htm?uri=http://new.qq.com/omn/DSG20220/DSG2022031000589600.html> (referer: None)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 104, in parse_detail
+    pubTime = year + '/' + date + ' ' + time
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+2022-03-10 17:20:16 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 17:20:16 [scrapy.core.engine] ERROR: Scraper close failure
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\twisted\internet\defer.py", line 857, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\pipelines.py", line 101, in close_spider
+    self.file.write(str(self.count))
+ValueError: I/O operation on closed file.
+2022-03-10 17:20:16 [selenium.webdriver.remote.remote_connection] DEBUG: DELETE http://localhost:60195/session/3dc6747b87d0e2948794ff784f30b3f9 {}
+2022-03-10 17:20:16 [urllib3.connectionpool] DEBUG: http://localhost:60195 "DELETE /session/3dc6747b87d0e2948794ff784f30b3f9 HTTP/1.1" 200 14
+2022-03-10 17:20:16 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:20:19 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 5615,
+ 'downloader/request_count': 20,
+ 'downloader/request_method_count/GET': 20,
+ 'downloader/response_bytes': 67293,
+ 'downloader/response_count': 20,
+ 'downloader/response_status_count/200': 18,
+ 'downloader/response_status_count/302': 2,
+ 'elapsed_time_seconds': 83.793407,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 9, 20, 16, 281631),
+ 'httpcompression/response_bytes': 139046,
+ 'httpcompression/response_count': 18,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 268,
+ 'log_count/ERROR': 17,
+ 'log_count/INFO': 11,
+ 'request_depth_max': 1,
+ 'response_received_count': 18,
+ 'scheduler/dequeued': 20,
+ 'scheduler/dequeued/memory': 20,
+ 'scheduler/enqueued': 20,
+ 'scheduler/enqueued/memory': 20,
+ 'spider_exceptions/MissingSchema': 15,
+ 'spider_exceptions/TypeError': 1,
+ 'start_time': datetime.datetime(2022, 3, 10, 9, 18, 52, 488224)}
+2022-03-10 17:20:19 [scrapy.core.engine] INFO: Spider closed (finished)

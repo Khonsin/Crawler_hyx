@@ -170,8 +170,8 @@ class ImagePipeline(ImagesPipeline):
         # print("*"* 30)
         # 列表推导式，获取图片的保存路径
         image_url = [x["path"] for ok, x in results if ok]
-        print(image_url[0])
+        # print(image_url[0])
 
         # 重命名，由于都是jpg文件，所以直接拼上了
-        os.rename(SavePath+image_url[0], SavePath + item["title"] + ".jpg")
+        # os.rename(SavePath+image_url[0], SavePath + item["title"] + ".jpg")
         return item

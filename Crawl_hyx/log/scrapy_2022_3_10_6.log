@@ -1,0 +1,141 @@
+2022-03-10 15:59:46 [scrapy.utils.log] INFO: Scrapy 2.5.1 started (bot: Crawl_hyx)
+2022-03-10 15:59:46 [scrapy.utils.log] INFO: Versions: lxml 4.7.1.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.1.0, Python 3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 1.1.1m  14 Dec 2021), cryptography 36.0.1, Platform Windows-10-10.0.19044-SP0
+2022-03-10 15:59:46 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2022-03-10 15:59:46 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'Crawl_hyx',
+ 'LOG_FILE': 'log/scrapy_2022_3_10_6.log',
+ 'NEWSPIDER_MODULE': 'Crawl_hyx.spiders',
+ 'SPIDER_MODULES': ['Crawl_hyx.spiders']}
+2022-03-10 15:59:46 [scrapy.extensions.telnet] INFO: Telnet Password: 86b62aef354d1fc3
+2022-03-10 15:59:46 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 15:59:47 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:59208/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "pageLoadStrategy": "normal", "goog:chromeOptions": {"extensions": [], "args": ["--headless", "--disable-gpu", "--no-sandbox", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "pageLoadStrategy": "normal", "goog:chromeOptions": {"extensions": [], "args": ["--headless", "--disable-gpu", "--no-sandbox", "--headless"]}}}
+2022-03-10 15:59:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): localhost:59208
+2022-03-10 15:59:48 [urllib3.connectionpool] DEBUG: http://localhost:59208 "POST /session HTTP/1.1" 200 797
+2022-03-10 15:59:48 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 15:59:48 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:59208/session/e34f48c59b654e8ca131aff6e6979cfe/timeouts {"implicit": 1000}
+2022-03-10 15:59:48 [urllib3.connectionpool] DEBUG: http://localhost:59208 "POST /session/e34f48c59b654e8ca131aff6e6979cfe/timeouts HTTP/1.1" 200 14
+2022-03-10 15:59:48 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 15:59:48 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'Crawl_hyx.middlewares.CrawlHyxDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 15:59:48 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 15:59:48 [scrapy.middleware] INFO: Enabled item pipelines:
+['Crawl_hyx.pipelines.WanyiPipeline', 'Crawl_hyx.pipelines.ImagePipeline']
+2022-03-10 15:59:48 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 15:59:48 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 15:59:48 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-03-10 15:59:49 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://war.163.com/> from <GET http://war.163.com/>
+2022-03-10 15:59:49 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:59208/session/e34f48c59b654e8ca131aff6e6979cfe/url {"url": "https://war.163.com/"}
+2022-03-10 15:59:51 [urllib3.connectionpool] DEBUG: http://localhost:59208 "POST /session/e34f48c59b654e8ca131aff6e6979cfe/url HTTP/1.1" 200 14
+2022-03-10 15:59:51 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 15:59:53 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:59208/session/e34f48c59b654e8ca131aff6e6979cfe/source {}
+2022-03-10 15:59:53 [urllib3.connectionpool] DEBUG: http://localhost:59208 "GET /session/e34f48c59b654e8ca131aff6e6979cfe/source HTTP/1.1" 200 437157
+2022-03-10 15:59:53 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 15:59:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://war.163.com/> (referer: None)
+2022-03-10 15:59:53 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:59208/session/e34f48c59b654e8ca131aff6e6979cfe/url {"url": "https://war.163.com/"}
+2022-03-10 15:59:53 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2022-03-10 15:59:53 [scrapy.core.scraper] ERROR: Spider error processing <GET https://war.163.com/> (referer: None)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "D:\Program Files (x86)\Python\Python310\lib\http\client.py", line 1374, in getresponse
+    response.begin()
+  File "D:\Program Files (x86)\Python\Python310\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "D:\Program Files (x86)\Python\Python310\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "D:\Program Files (x86)\Python\Python310\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 43, in parse
+    self.bro.get(response.url)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 436, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 422, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 421, in execute
+    return self._request(command_info[0], url, body=data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 443, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\request.py", line 78, in request
+    return self.request_encode_body(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\util\retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\packages\six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "D:\Program Files (x86)\Python\Python310\lib\http\client.py", line 1374, in getresponse
+    response.begin()
+  File "D:\Program Files (x86)\Python\Python310\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "D:\Program Files (x86)\Python\Python310\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "D:\Program Files (x86)\Python\Python310\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+2022-03-10 15:59:53 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2022-03-10 15:59:53 [selenium.webdriver.remote.remote_connection] DEBUG: DELETE http://localhost:59208/session/e34f48c59b654e8ca131aff6e6979cfe {}
+2022-03-10 15:59:53 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (2): localhost:59208

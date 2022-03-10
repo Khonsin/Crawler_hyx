@@ -39,6 +39,7 @@ class TengxunItem(scrapy.Item):
     readNum = scrapy.Field()  #阅读数
     retweetNum = scrapy.Field()  #转发数
     url = scrapy.Field()  #链接
+    img_url = scrapy.Field()  # 图片链接
 
 class BaiduItem(scrapy.Item):
     source = scrapy.Field()  #情报源

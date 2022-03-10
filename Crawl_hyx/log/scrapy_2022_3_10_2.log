@@ -1,0 +1,1911 @@
+2022-03-10 10:32:08 [scrapy.utils.log] INFO: Scrapy 2.5.1 started (bot: Crawl_hyx)
+2022-03-10 10:32:08 [scrapy.utils.log] INFO: Versions: lxml 4.7.1.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.1.0, Python 3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 1.1.1m  14 Dec 2021), cryptography 36.0.1, Platform Windows-10-10.0.19044-SP0
+2022-03-10 10:32:08 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2022-03-10 10:32:08 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'Crawl_hyx',
+ 'LOG_FILE': 'log/scrapy_2022_3_10_2.log',
+ 'NEWSPIDER_MODULE': 'Crawl_hyx.spiders',
+ 'SPIDER_MODULES': ['Crawl_hyx.spiders']}
+2022-03-10 10:32:08 [scrapy.extensions.telnet] INFO: Telnet Password: ea81c2348187eea4
+2022-03-10 10:32:08 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 10:32:09 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "pageLoadStrategy": "normal", "goog:chromeOptions": {"extensions": [], "args": ["--headless", "--disable-gpu", "--no-sandbox", "--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "pageLoadStrategy": "normal", "goog:chromeOptions": {"extensions": [], "args": ["--headless", "--disable-gpu", "--no-sandbox", "--headless"]}}}
+2022-03-10 10:32:09 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): localhost:64149
+2022-03-10 10:32:09 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session HTTP/1.1" 200 797
+2022-03-10 10:32:09 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:09 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/timeouts {"implicit": 1000}
+2022-03-10 10:32:09 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/timeouts HTTP/1.1" 200 14
+2022-03-10 10:32:09 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:10 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'Crawl_hyx.middlewares.CrawlHyxDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 10:32:10 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 10:32:10 [scrapy.middleware] INFO: Enabled item pipelines:
+['Crawl_hyx.pipelines.WanyiPipeline', 'Crawl_hyx.pipelines.ImagePipeline']
+2022-03-10 10:32:10 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 10:32:10 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 10:32:10 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-03-10 10:32:10 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://war.163.com/> from <GET http://war.163.com/>
+2022-03-10 10:32:10 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://war.163.com/"}
+2022-03-10 10:32:13 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:32:13 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:15 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:32:15 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 432930
+2022-03-10 10:32:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://war.163.com/> (referer: None)
+2022-03-10 10:32:15 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://war.163.com/"}
+2022-03-10 10:32:16 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:32:16 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:16 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/execute/sync {"script": "return document.body.scrollHeight;", "args": []}
+2022-03-10 10:32:16 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/execute/sync HTTP/1.1" 200 15
+2022-03-10 10:32:16 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:18 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 10:32:18 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/execute/sync HTTP/1.1" 200 14
+2022-03-10 10:32:18 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:20 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 10:32:20 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/execute/sync HTTP/1.1" 200 14
+2022-03-10 10:32:20 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:22 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 10:32:22 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/execute/sync HTTP/1.1" 200 14
+2022-03-10 10:32:22 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:24 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 10:32:24 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/execute/sync HTTP/1.1" 200 14
+2022-03-10 10:32:24 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:26 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 10:32:26 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/execute/sync HTTP/1.1" 200 14
+2022-03-10 10:32:26 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:28 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 10:32:28 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/execute/sync HTTP/1.1" 200 14
+2022-03-10 10:32:28 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:28 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/execute/sync {"script": "return document.body.scrollHeight;", "args": []}
+2022-03-10 10:32:28 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/execute/sync HTTP/1.1" 200 15
+2022-03-10 10:32:28 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:29 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://war.163.com/photoview/4T8E0001/2313504.html"}
+2022-03-10 10:32:32 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:32:32 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:34 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:32:34 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 118225
+2022-03-10 10:32:34 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://war.163.com/photoview/4T8E0001/2313504.html> (referer: https://war.163.com/)
+2022-03-10 10:32:34 [scrapy.core.scraper] ERROR: Spider error processing <GET https://war.163.com/photoview/4T8E0001/2313504.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:32:35 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H21M3C8405504DOH.html"}
+2022-03-10 10:32:36 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:32:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:38 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:32:38 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 302952
+2022-03-10 10:32:38 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H21M3C8405504DOH.html> (referer: https://war.163.com/)
+2022-03-10 10:32:38 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H237UCF50514R9OJ.html"}
+2022-03-10 10:32:39 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:32:39 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:41 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:32:41 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 219465
+2022-03-10 10:32:41 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H237UCF50514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:32:41 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H22UAQBN0514R9OJ.html"}
+2022-03-10 10:32:41 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:32:41 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:43 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:32:43 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 223284
+2022-03-10 10:32:43 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H22UAQBN0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:32:44 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H2367UL50514R9OJ.html"}
+2022-03-10 10:32:44 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:32:44 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:46 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:32:46 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 117942
+2022-03-10 10:32:46 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H2367UL50514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:32:46 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H21UEK1505504DOH.html"}
+2022-03-10 10:32:50 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:32:50 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:52 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:32:52 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 203861
+2022-03-10 10:32:52 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H21UEK1505504DOH.html> (referer: https://war.163.com/)
+2022-03-10 10:32:52 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H233505K0514R9OJ.html"}
+2022-03-10 10:32:53 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:32:53 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:55 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:32:55 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 252322
+2022-03-10 10:32:55 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H233505K0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:32:55 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H21M3C8405504DOH.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:32:55 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H237UCF50514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:32:55 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H22UAQBN0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:32:55 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H2367UL50514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:32:55 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H21UEK1505504DOH.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:32:55 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H2334U680514R9OJ.html"}
+2022-03-10 10:32:56 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:32:56 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:58 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:32:58 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 234797
+2022-03-10 10:32:58 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:32:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H2334U680514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:32:58 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://war.163.com/photoview/4T8E0001/2313497.html"}
+2022-03-10 10:32:59 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:32:59 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:01 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:01 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 140982
+2022-03-10 10:33:01 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://war.163.com/photoview/4T8E0001/2313497.html> (referer: https://war.163.com/)
+2022-03-10 10:33:01 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://war.163.com/photoview/4T8E0001/2313507.html"}
+2022-03-10 10:33:01 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:01 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:03 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:03 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 89070
+2022-03-10 10:33:03 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://war.163.com/photoview/4T8E0001/2313507.html> (referer: https://war.163.com/)
+2022-03-10 10:33:03 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H236BKD20514R9OJ.html"}
+2022-03-10 10:33:05 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:05 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:07 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:07 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 237047
+2022-03-10 10:33:07 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H236BKD20514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:33:07 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H237UBP90514R9OJ.html"}
+2022-03-10 10:33:08 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:08 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:10 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:10 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 232953
+2022-03-10 10:33:10 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H237UBP90514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:33:10 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H23956R40514R9OJ.html"}
+2022-03-10 10:33:10 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:10 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:12 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:13 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 255708
+2022-03-10 10:33:13 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H23956R40514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:33:13 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://war.163.com/photoview/4T8E0001/2313506.html"}
+2022-03-10 10:33:13 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:13 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:15 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:15 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 85178
+2022-03-10 10:33:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://war.163.com/photoview/4T8E0001/2313506.html> (referer: https://war.163.com/)
+2022-03-10 10:33:15 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H20VCJV80514R9OJ.html"}
+2022-03-10 10:33:16 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:16 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:18 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:18 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 210398
+2022-03-10 10:33:18 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H20VCJV80514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:33:18 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H20VECBG05504DOH.html"}
+2022-03-10 10:33:18 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:18 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:20 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:20 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 217314
+2022-03-10 10:33:21 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H20VECBG05504DOH.html> (referer: https://war.163.com/)
+2022-03-10 10:33:21 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H1UDBJ9P0514R9OJ.html"}
+2022-03-10 10:33:21 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:21 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:23 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:23 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 254662
+2022-03-10 10:33:23 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H1UDBJ9P0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:33:23 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H21PT8AI05504DOH.html"}
+2022-03-10 10:33:27 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:27 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:29 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:29 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 243156
+2022-03-10 10:33:29 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H21PT8AI05504DOH.html> (referer: https://war.163.com/)
+2022-03-10 10:33:29 [scrapy.extensions.logstats] INFO: Crawled 19 pages (at 19 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 10:33:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H233505K0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:33:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H2334U680514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:33:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://war.163.com/photoview/4T8E0001/2313507.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:33:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://war.163.com/photoview/4T8E0001/2313497.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:33:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H236BKD20514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:33:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H237UBP90514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:33:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H23956R40514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:33:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://war.163.com/photoview/4T8E0001/2313506.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:33:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H20VCJV80514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:33:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H20VECBG05504DOH.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:33:29 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H1UDBJ9P0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:33:29 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H1UG7CBL05504DOH.html"}
+2022-03-10 10:33:33 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:33 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:35 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:35 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 257614
+2022-03-10 10:33:35 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H1UG7CBL05504DOH.html> (referer: https://war.163.com/)
+2022-03-10 10:33:35 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://war.163.com/photoview/4T8E0001/2313498.html"}
+2022-03-10 10:33:36 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:38 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:38 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 158250
+2022-03-10 10:33:38 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://war.163.com/photoview/4T8E0001/2313498.html> (referer: https://war.163.com/)
+2022-03-10 10:33:38 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H1UGDNNO0514R9OJ.html"}
+2022-03-10 10:33:39 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:39 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:41 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:41 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 247853
+2022-03-10 10:33:41 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H1UGDNNO0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:33:41 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H1U4MISN0514R9OJ.html"}
+2022-03-10 10:33:44 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:44 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:46 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:46 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 261043
+2022-03-10 10:33:46 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H1U4MISN0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:33:46 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H1T7B6BO0514R9OJ.html"}
+2022-03-10 10:33:47 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:47 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:49 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:49 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 264315
+2022-03-10 10:33:49 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H1T7B6BO0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:33:49 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/war/article/H1UBH5N5000181KT.html"}
+2022-03-10 10:33:51 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:51 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:53 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:53 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 339314
+2022-03-10 10:33:53 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/war/article/H1UBH5N5000181KT.html> (referer: https://war.163.com/)
+2022-03-10 10:33:53 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H1UDQ4UR05504DOH.html"}
+2022-03-10 10:33:55 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:55 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:57 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:57 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 251969
+2022-03-10 10:33:57 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H1UDQ4UR05504DOH.html> (referer: https://war.163.com/)
+2022-03-10 10:33:57 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H218JNUD0514R9OJ.html"}
+2022-03-10 10:33:57 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:33:57 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:59 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:33:59 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 247336
+2022-03-10 10:33:59 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:33:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H218JNUD0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:33:59 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H20LLOCV0514R9OJ.html"}
+2022-03-10 10:34:00 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:00 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:02 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:02 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 147739
+2022-03-10 10:34:02 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H20LLOCV0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:34:02 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H21PT8AI05504DOH.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:02 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H1UG7CBL05504DOH.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:02 [scrapy.core.scraper] ERROR: Spider error processing <GET https://war.163.com/photoview/4T8E0001/2313498.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:34:02 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H1UGDNNO0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:02 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H1U4MISN0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:02 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H1T7B6BO0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:02 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/war/article/H1UBH5N5000181KT.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:34:02 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H1UDQ4UR05504DOH.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:03 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H218JNUD0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:03 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H20M9DL80514R9OJ.html"}
+2022-03-10 10:34:03 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:03 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:05 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:05 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 248370
+2022-03-10 10:34:05 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H20M9DL80514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:34:05 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H20RNAA505504DOH.html"}
+2022-03-10 10:34:06 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:06 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:08 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:08 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 247557
+2022-03-10 10:34:08 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H20RNAA505504DOH.html> (referer: https://war.163.com/)
+2022-03-10 10:34:08 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H20S58SQ05504DOH.html"}
+2022-03-10 10:34:09 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:09 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:11 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:11 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 251045
+2022-03-10 10:34:11 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H20S58SQ05504DOH.html> (referer: https://war.163.com/)
+2022-03-10 10:34:11 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H215IUIT0514R9OJ.html"}
+2022-03-10 10:34:12 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:12 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:14 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:14 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 249410
+2022-03-10 10:34:14 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H215IUIT0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:34:14 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H216PDOP0514R9OJ.html"}
+2022-03-10 10:34:15 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:17 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:17 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 242797
+2022-03-10 10:34:17 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H216PDOP0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:34:17 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/war/article/H21DGSJI000181KT.html"}
+2022-03-10 10:34:18 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:18 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:20 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:20 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 302803
+2022-03-10 10:34:20 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/war/article/H21DGSJI000181KT.html> (referer: https://war.163.com/)
+2022-03-10 10:34:20 [scrapy.extensions.logstats] INFO: Crawled 34 pages (at 15 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 10:34:20 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/war/article/H20SR4VD000181KT.html"}
+2022-03-10 10:34:21 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:21 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:23 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:23 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 300288
+2022-03-10 10:34:23 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/war/article/H20SR4VD000181KT.html> (referer: https://war.163.com/)
+2022-03-10 10:34:23 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/war/article/H21DEG4I000181KT.html"}
+2022-03-10 10:34:24 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:24 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:26 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:26 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 303960
+2022-03-10 10:34:26 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/war/article/H21DEG4I000181KT.html> (referer: https://war.163.com/)
+2022-03-10 10:34:26 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H20LLOCV0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:26 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H20M9DL80514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:26 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H20RNAA505504DOH.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:26 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H20S58SQ05504DOH.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:26 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H215IUIT0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:26 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H216PDOP0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:26 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H1V4J10B05504DOH.html"}
+2022-03-10 10:34:27 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:27 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:29 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:29 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 256156
+2022-03-10 10:34:29 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H1V4J10B05504DOH.html> (referer: https://war.163.com/)
+2022-03-10 10:34:29 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://war.163.com/photoview/4T8E0001/2313500.html"}
+2022-03-10 10:34:30 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:30 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:32 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:32 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 125973
+2022-03-10 10:34:32 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://war.163.com/photoview/4T8E0001/2313500.html> (referer: https://war.163.com/)
+2022-03-10 10:34:32 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H20J6EVG0514R9OJ.html"}
+2022-03-10 10:34:33 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:33 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:35 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:35 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 255554
+2022-03-10 10:34:35 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H20J6EVG0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:34:35 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H20KD22N0514R9OJ.html"}
+2022-03-10 10:34:36 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:38 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:38 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 250719
+2022-03-10 10:34:38 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H20KD22N0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:34:38 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H20NED830514R9OJ.html"}
+2022-03-10 10:34:38 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:38 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:40 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:40 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 254510
+2022-03-10 10:34:40 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H20NED830514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:34:40 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/war/article/H21DGSJI000181KT.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:34:40 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/war/article/H20SR4VD000181KT.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:34:41 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H20NEDKS0514R9OJ.html"}
+2022-03-10 10:34:41 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:41 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:43 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:43 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 259903
+2022-03-10 10:34:43 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H20NEDKS0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:34:43 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H20S7UTJ05504DOH.html"}
+2022-03-10 10:34:44 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:44 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:46 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:46 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 248622
+2022-03-10 10:34:46 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H20S7UTJ05504DOH.html> (referer: https://war.163.com/)
+2022-03-10 10:34:46 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/war/article/H21DEG4I000181KT.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:34:46 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H1V4J10B05504DOH.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:46 [scrapy.core.scraper] ERROR: Spider error processing <GET https://war.163.com/photoview/4T8E0001/2313500.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:34:46 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H20J6EVG0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:46 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H20KD22N0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:46 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/war/article/H20T63UV000181KT.html"}
+2022-03-10 10:34:47 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:47 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:49 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:49 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 311604
+2022-03-10 10:34:49 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/war/article/H20T63UV000181KT.html> (referer: https://war.163.com/)
+2022-03-10 10:34:49 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H22TNAQQ0514R9OJ.html"}
+2022-03-10 10:34:50 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:50 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:52 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:52 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 231850
+2022-03-10 10:34:52 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H22TNAQQ0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:34:52 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H2334UJK0514R9OJ.html"}
+2022-03-10 10:34:53 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:53 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:55 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:55 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 236612
+2022-03-10 10:34:55 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H2334UJK0514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:34:55 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H20NED830514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:55 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H20NEDKS0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:55 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H1VHH5V105504DOH.html"}
+2022-03-10 10:34:56 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:56 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:58 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:34:58 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 247283
+2022-03-10 10:34:58 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:34:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H1VHH5V105504DOH.html> (referer: https://war.163.com/)
+2022-03-10 10:34:58 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H20S7UTJ05504DOH.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:58 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/war/article/H20T63UV000181KT.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:34:58 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H22TNAQQ0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:58 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H2334UJK0514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:58 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H1VHH5V105504DOH.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:34:58 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://war.163.com/photoview/4T8E0001/2313501.html"}
+2022-03-10 10:34:59 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:34:59 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:35:01 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:35:01 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 135209
+2022-03-10 10:35:01 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:35:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://war.163.com/photoview/4T8E0001/2313501.html> (referer: https://war.163.com/)
+2022-03-10 10:35:01 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H212CHE805504DOH.html"}
+2022-03-10 10:35:02 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:35:02 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:35:04 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:35:04 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 253495
+2022-03-10 10:35:04 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:35:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H212CHE805504DOH.html> (referer: https://war.163.com/)
+2022-03-10 10:35:04 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://war.163.com/photoview/4T8E0001/2313502.html"}
+2022-03-10 10:35:05 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:35:05 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:35:07 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:35:07 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 115164
+2022-03-10 10:35:07 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:35:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://war.163.com/photoview/4T8E0001/2313502.html> (referer: https://war.163.com/)
+2022-03-10 10:35:07 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/url {"url": "https://www.163.com/dy/article/H2117GQ00514R9OJ.html"}
+2022-03-10 10:35:08 [urllib3.connectionpool] DEBUG: http://localhost:64149 "POST /session/7b7389554d6aa01f29aad7e431446752/url HTTP/1.1" 200 14
+2022-03-10 10:35:08 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:35:10 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752/source {}
+2022-03-10 10:35:10 [urllib3.connectionpool] DEBUG: http://localhost:64149 "GET /session/7b7389554d6aa01f29aad7e431446752/source HTTP/1.1" 200 250651
+2022-03-10 10:35:10 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:35:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.163.com/dy/article/H2117GQ00514R9OJ.html> (referer: https://war.163.com/)
+2022-03-10 10:35:10 [scrapy.core.scraper] ERROR: Spider error processing <GET https://war.163.com/photoview/4T8E0001/2313501.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:35:10 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H212CHE805504DOH.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:35:10 [scrapy.core.scraper] ERROR: Spider error processing <GET https://war.163.com/photoview/4T8E0001/2313502.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 103, in parse_detail
+    pubTime = pubTime.replace('\n', '')
+AttributeError: 'NoneType' object has no attribute 'replace'
+2022-03-10 10:35:10 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.163.com/dy/article/H2117GQ00514R9OJ.html> (referer: https://war.163.com/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\wanyi.py", line 152, in parse_detail
+    num = int(num)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2022-03-10 10:35:10 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-03-10 10:35:10 [selenium.webdriver.remote.remote_connection] DEBUG: DELETE http://localhost:64149/session/7b7389554d6aa01f29aad7e431446752 {}
+2022-03-10 10:35:10 [urllib3.connectionpool] DEBUG: http://localhost:64149 "DELETE /session/7b7389554d6aa01f29aad7e431446752 HTTP/1.1" 200 14
+2022-03-10 10:35:10 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 10:35:13 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 14119,
+ 'downloader/request_count': 52,
+ 'downloader/request_method_count/GET': 52,
+ 'downloader/response_bytes': 1445016,
+ 'downloader/response_count': 52,
+ 'downloader/response_status_count/200': 51,
+ 'downloader/response_status_count/301': 1,
+ 'elapsed_time_seconds': 179.883082,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 3, 10, 2, 35, 10, 423296),
+ 'httpcompression/response_bytes': 7461091,
+ 'httpcompression/response_count': 51,
+ 'log_count/DEBUG': 395,
+ 'log_count/ERROR': 50,
+ 'log_count/INFO': 12,
+ 'request_depth_max': 1,
+ 'response_received_count': 51,
+ 'scheduler/dequeued': 52,
+ 'scheduler/dequeued/memory': 52,
+ 'scheduler/enqueued': 52,
+ 'scheduler/enqueued/memory': 52,
+ 'spider_exceptions/AttributeError': 13,
+ 'spider_exceptions/TypeError': 37,
+ 'start_time': datetime.datetime(2022, 3, 10, 2, 32, 10, 540214)}
+2022-03-10 10:35:13 [scrapy.core.engine] INFO: Spider closed (finished)

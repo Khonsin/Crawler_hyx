@@ -1,10 +1,16 @@
 import datetime
+import os
 import time
 
 import scrapy
 from selenium import webdriver
 from ..items import TengxunItem
+import requests
 from selenium.webdriver.common.by import By
+
+headers = {
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36',
+}
 
 class TengxunSpider(scrapy.Spider):
     name = 'tengxun'
@@ -107,6 +113,48 @@ class TengxunSpider(scrapy.Spider):
         item['pubTime'] = pubTime
         item['readNum'] = ''
         item['retweetNum'] = ''
+
+        # 获取图片
+        cnt = 0
+        image = 'image'
+        if not os.path.exists(image):
+            os.mkdir(image)
+        image_urls = response.xpath('/html/body/div[3]/div[1]/div[1]/div[2]/p/img/@src').extract()
+        # print(image_urls)
+        for image_url in image_urls:
+            # image_url = image_url.xpath('./img/@src').extract_first()
+            cnt = cnt + 1
+            # img_url["图片" + str(cnt)] = str(image_url)
+            # time.sleep(2)
+            # 下载数据:
+            image_url = 'https:' + image_url
+            # print(image_url)
+            res = requests.get(image_url, headers=headers)
+            data = res.content
+            try:
+                with open(image + '/tengxun/' + title + '(' + str(cnt) + ').jpg', 'wb') as f:
+                    f.write(data)
+                    print('%s下载成功' % title)
+                    f.close()
+            except:
+                break
+        # print(img_url)
+        item['img_url'] = image_urls
+
+        # result = 'video'
+        # if not os.path.exists(result):
+        #     os.mkdir(result)
+        # video_urls = response.xpath('//*[@id="content"]/div[2]/p/video/@src').extract()
+        # for video_url in video_urls:
+        #     # 下载数据:
+        #     res = requests.get(video_url, headers=headers)
+        #     data = res.content
+        #     try:
+        #         with open(result + '/tengxun/' + title + '.mp4', 'wb') as f:
+        #             f.write(data)
+        #             print('%s下载成功' % title)
+        #     except:
+        #         break
         yield item
 
     def closed(self, spider):

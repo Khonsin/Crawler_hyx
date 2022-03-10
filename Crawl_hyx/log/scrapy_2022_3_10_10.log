@@ -1,0 +1,224 @@
+2022-03-10 17:22:18 [scrapy.utils.log] INFO: Scrapy 2.5.1 started (bot: Crawl_hyx)
+2022-03-10 17:22:18 [scrapy.utils.log] INFO: Versions: lxml 4.7.1.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.1.0, Python 3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 1.1.1m  14 Dec 2021), cryptography 36.0.1, Platform Windows-10-10.0.19044-SP0
+2022-03-10 17:22:18 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2022-03-10 17:22:18 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'Crawl_hyx',
+ 'LOG_FILE': 'log/scrapy_2022_3_10_10.log',
+ 'NEWSPIDER_MODULE': 'Crawl_hyx.spiders',
+ 'SPIDER_MODULES': ['Crawl_hyx.spiders']}
+2022-03-10 17:22:18 [scrapy.extensions.telnet] INFO: Telnet Password: 2d1acfe297ce105d
+2022-03-10 17:22:18 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2022-03-10 17:22:18 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "pageLoadStrategy": "normal", "goog:chromeOptions": {"extensions": [], "args": ["--headless", "--disable-gpu", "--no-sandbox"]}}}, "desiredCapabilities": {"browserName": "chrome", "pageLoadStrategy": "normal", "goog:chromeOptions": {"extensions": [], "args": ["--headless", "--disable-gpu", "--no-sandbox"]}}}
+2022-03-10 17:22:18 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): localhost:60780
+2022-03-10 17:22:19 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session HTTP/1.1" 200 798
+2022-03-10 17:22:19 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:19 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/timeouts {"implicit": 1000}
+2022-03-10 17:22:19 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/timeouts HTTP/1.1" 200 14
+2022-03-10 17:22:19 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:19 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'Crawl_hyx.middlewares.CrawlHyxDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-03-10 17:22:19 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-03-10 17:22:19 [scrapy.middleware] INFO: Enabled item pipelines:
+['Crawl_hyx.pipelines.TengxunPipeline', 'Crawl_hyx.pipelines.ImagePipeline']
+2022-03-10 17:22:19 [scrapy.core.engine] INFO: Spider opened
+2022-03-10 17:22:19 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-03-10 17:22:19 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-03-10 17:22:19 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url {"url": "https://new.qq.com/ch/milite/"}
+2022-03-10 17:22:21 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url HTTP/1.1" 200 14
+2022-03-10 17:22:21 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:23 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/source {}
+2022-03-10 17:22:23 [urllib3.connectionpool] DEBUG: http://localhost:60780 "GET /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/source HTTP/1.1" 200 89839
+2022-03-10 17:22:23 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/ch/milite/> (referer: None)
+2022-03-10 17:22:23 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url {"url": "https://new.qq.com/ch/milite/"}
+2022-03-10 17:22:24 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url HTTP/1.1" 200 14
+2022-03-10 17:22:24 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:24 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync {"script": "return document.body.scrollHeight;", "args": []}
+2022-03-10 17:22:24 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:22:24 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:26 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 17:22:26 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:22:26 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:28 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 17:22:28 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:22:28 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:30 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 17:22:30 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:22:30 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:32 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 17:22:32 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:22:32 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:34 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 17:22:34 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:22:34 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync {"script": "window.scrollBy(0,1000)", "args": []}
+2022-03-10 17:22:36 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:22:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync {"script": "return document.body.scrollHeight;", "args": []}
+2022-03-10 17:22:36 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/execute/sync HTTP/1.1" 200 14
+2022-03-10 17:22:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url {"url": "https://new.qq.com/omn/20220310/20220310A06UPS00.html"}
+2022-03-10 17:22:38 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url HTTP/1.1" 200 14
+2022-03-10 17:22:38 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:40 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/source {}
+2022-03-10 17:22:40 [urllib3.connectionpool] DEBUG: http://localhost:60780 "GET /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/source HTTP/1.1" 200 100839
+2022-03-10 17:22:40 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A06UPS00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:22:40 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url {"url": "https://new.qq.com/omn/20220310/20220310A06HOH00.html"}
+2022-03-10 17:22:41 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url HTTP/1.1" 200 14
+2022-03-10 17:22:41 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:43 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/source {}
+2022-03-10 17:22:43 [urllib3.connectionpool] DEBUG: http://localhost:60780 "GET /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/source HTTP/1.1" 200 50460
+2022-03-10 17:22:43 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A06HOH00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:22:43 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url {"url": "https://new.qq.com/omn/20220310/20220310A06UPS00.html"}
+2022-03-10 17:22:44 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url HTTP/1.1" 200 14
+2022-03-10 17:22:44 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:44 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/timeouts {"implicit": 10000}
+2022-03-10 17:22:44 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/timeouts HTTP/1.1" 200 14
+2022-03-10 17:22:44 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:44 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): inews.gtimg.com:80
+2022-03-10 17:22:44 [urllib3.connectionpool] DEBUG: http://inews.gtimg.com:80 "GET /newsapp_bt/0/14611715698/1000 HTTP/1.1" 200 45545
+2022-03-10 17:22:44 [scrapy.core.scraper] ERROR: Error processing {'author': '环球时报热点',
+ 'content': '据塔斯社报道，当地时间3月9日，在俄罗斯国防部简报会上，俄国防部发言人伊戈尔·科纳申科夫表示，乌克兰正试图从在波兰领空飞行的Е-3А飞机获得空中情况数据。Е-3А预警机。图源：北约网站科纳申科夫称，这些E-3A是北约预警机中的一部分。他说“乌克兰武装部队领导层在文尼察空军指挥所，正试图通过获取属于北约预警系统一部分的E-3A飞机的数据，来弥补有关空中情势信息不足的问题。”他还称，这些E-3A飞机在波兰领空全天候执行任务。根据俄罗斯国防部发布的消息，科纳申科夫在当天的简报会上还透露，在俄罗斯特别军事行动刚刚开始时，乌克兰军队拥有多达250架可用的战斗机和直升机。俄空天军部队目前已在地面和空中摧毁了其中的89架战斗机和57架直升机。部分乌克兰军队的飞机已经飞往罗马尼亚，没有参加战斗。另外，科纳申科夫还称，乌克兰90%的军用机场已被瘫痪，没有训练有素的一级和二级飞行员能升空。9日全天，只有一次乌克兰空军飞机尝试飞行的记录。免责声明：本文来自腾讯新闻客户端创作者，不代表腾讯网的观点和立场。',
+ 'followNum': '',
+ 'fromWhere': '',
+ 'img_url': ['//inews.gtimg.com/newsapp_bt/0/14611715698/1000'],
+ 'pubTime': '2022/03/10 16:30',
+ 'readNum': '',
+ 'regTime': '',
+ 'retweetNum': '',
+ 'source': '腾讯军事',
+ 'timestamp': '20220310172244',
+ 'title': '俄国防部：乌克兰正试图通过北约预警机获取空情数据',
+ 'url': 'https://new.qq.com/omn/20220310/20220310A06UPS00.html'}
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\twisted\internet\defer.py", line 857, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 150, in f
+    return deferred_from_coro(coro_f(*coro_args, **coro_kwargs))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\pipelines\media.py", line 88, in process_item
+    dlist = [self._process_request(r, info, item) for r in requests]
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\pipelines\media.py", line 88, in <listcomp>
+    dlist = [self._process_request(r, info, item) for r in requests]
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\pipelines.py", line 165, in get_media_requests
+    yield scrapy.Request(url)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\http\request\__init__.py", line 25, in __init__
+    self._set_url(url)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\http\request\__init__.py", line 73, in _set_url
+    raise ValueError(f'Missing scheme in request url: {self._url}')
+ValueError: Missing scheme in request url: //inews.gtimg.com/newsapp_bt/0/14611715698/1000
+2022-03-10 17:22:44 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url {"url": "https://new.qq.com/omn/20220310/20220310A06TWK00.html"}
+2022-03-10 17:22:48 [urllib3.connectionpool] DEBUG: http://localhost:60780 "POST /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url HTTP/1.1" 200 14
+2022-03-10 17:22:48 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:50 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/source {}
+2022-03-10 17:22:50 [urllib3.connectionpool] DEBUG: http://localhost:60780 "GET /session/6dd8dcf3af79ebc1f715a6041ff9e8d6/source HTTP/1.1" 200 113812
+2022-03-10 17:22:50 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2022-03-10 17:22:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://new.qq.com/omn/20220310/20220310A06TWK00.html> (referer: https://new.qq.com/ch/milite/)
+2022-03-10 17:22:50 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url {"url": "https://new.qq.com/omn/20220310/20220310A06HOH00.html"}
+2022-03-10 17:22:51 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2022-03-10 17:22:51 [scrapy.core.scraper] ERROR: Spider error processing <GET https://new.qq.com/omn/20220310/20220310A06HOH00.html> (referer: https://new.qq.com/ch/milite/)
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "D:\Program Files (x86)\Python\Python310\lib\http\client.py", line 1374, in getresponse
+    response.begin()
+  File "D:\Program Files (x86)\Python\Python310\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "D:\Program Files (x86)\Python\Python310\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "D:\Program Files (x86)\Python\Python310\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\defer.py", line 120, in iter_errback
+    yield next(it)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\utils\python.py", line 353, in __next__
+    return next(self.data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\scrapy\core\spidermw.py", line 56, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Python\Crawler_hyx\Crawl_hyx\Crawl_hyx\spiders\tengxun.py", line 80, in parse_detail
+    self.bro.get(response.url)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 436, in get
+    self.execute(Command.GET, {'url': url})
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 422, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 421, in execute
+    return self._request(command_info[0], url, body=data)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 443, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\request.py", line 78, in request
+    return self.request_encode_body(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\util\retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\packages\six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "D:\Python\Crawler_hyx\venv\lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "D:\Program Files (x86)\Python\Python310\lib\http\client.py", line 1374, in getresponse
+    response.begin()
+  File "D:\Program Files (x86)\Python\Python310\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "D:\Program Files (x86)\Python\Python310\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "D:\Program Files (x86)\Python\Python310\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+2022-03-10 17:22:51 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://localhost:60780/session/6dd8dcf3af79ebc1f715a6041ff9e8d6/url {"url": "https://new.qq.com/omn/20220310/20220310A06FVG00.html"}
+2022-03-10 17:22:51 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (2): localhost:60780

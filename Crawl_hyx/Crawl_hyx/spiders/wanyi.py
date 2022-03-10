@@ -1,4 +1,5 @@
 import datetime
+import os
 import time
 from xml import etree
 
@@ -6,6 +7,10 @@ import scrapy
 from ..items import WanyiItem
 from selenium import webdriver
 import requests
+
+headers = {
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36',
+}
 
 class WanyiSpider(scrapy.Spider):
     name = 'wanyi'
@@ -116,20 +121,72 @@ class WanyiSpider(scrapy.Spider):
         item['retweetNum'] = retweetNum
         item['url'] = url
 
-        # 获取图片
+        # 获取文本图片
         img_url = dict()
         cnt = 0
-        images_url = response.xpath('//*[@id="content"]/div[2]/p[@class="f_center"]')
+        image = 'image'
+        if not os.path.exists(image):
+            os.mkdir(image)
         image_urls = response.xpath('//*[@id="content"]/div[2]/p[@class="f_center"]/img/@src').extract()
         # print(image_urls)
-        for image_url in images_url:
-            image_url = image_url.xpath('./img/@src').extract_first()
+        for image_url in image_urls:
+            # image_url = image_url.xpath('./img/@src').extract_first()
             cnt = cnt + 1
-            img_url["图片" + str(cnt)] = str(image_url)
-            time.sleep(2)
+            # img_url["图片" + str(cnt)] = str(image_url)
+            # time.sleep(2)
+            # 下载数据:
+            res = requests.get(image_url, headers=headers)
+            data = res.content
+            try:
+                with open(image + '/wanyi/' + title + '(' + str(cnt) + ').jpg', 'wb') as f:
+                    f.write(data)
+                    print('%s下载成功' % title)
+                    f.close()
+            except:
+                break
         # print(img_url)
         item['img_url'] = image_urls
-        #
+
+        #获取链接图片
+        # try:
+        #     num = response.xpath('/html/body/div[2]/div[1]/div[1]/ul/li[last()]/span/text()').extract_first()
+        #     num = int(num)
+        #     print(num)
+        #     cnt = 0
+        #     while (num > 0):
+        #         num = num - 1
+        #         cnt = cnt + 1
+        #         img_url = response.xpath('///html/body/div[2]/div[2]/div[1]/div[1]/img/@src').extract_first()
+        #         print(img_url)
+        #         con = response.xpath('/html/body/div[2]/div[1]/div[2]/h1/text()').extract_first()
+        #         print(con)
+        #         res = requests.get(img_url, headers=headers)
+        #         data = res.content
+        #         try:
+        #             with open(image + '/wanyi/' + con + '(' + str(cnt) + ').jpg', 'wb') as f:
+        #                 f.write(data)
+        #                 print('%s下载成功' % title)
+        #                 f.close()
+        #         except:
+        #             break
+        # except:
+        #     print("无")
+
+        #下载视频
+        result = 'video'
+        if not os.path.exists(result):
+            os.mkdir(result)
+        video_urls = response.xpath('//*[@id="content"]/div[2]/p/video/@src').extract()
+        for video_url in video_urls:
+            # 下载数据:
+            res = requests.get(video_url, headers=headers)
+            data = res.content
+            try:
+                with open(result + '/wanyi/' + title + '.mp4', 'wb') as f:
+                    f.write(data)
+                    print('%s下载成功' % title)
+            except:
+                break
         yield item
 
     def closed(self, spider):
