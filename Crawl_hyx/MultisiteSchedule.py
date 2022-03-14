@@ -20,11 +20,11 @@ from threading import Thread
 from Crawl_hyx.spiders.baidubaike import BaidubaikeSpider
 
 
-logging.basicConfig(level=logging.DEBUG,
-                    format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
-                    datefmt='%Y-%m-%d %T'
-                    )
-logger = logging.getLogger(__name__)
+# logging.basicConfig(level=logging.DEBUG,
+#                     format='[%(asctime)-15s] [%(levelname)8s] [%(name)10s ] - %(message)s (%(filename)s:%(lineno)s)',
+#                     datefmt='%Y-%m-%d %T'
+#                     )
+# logger = logging.getLogger(__name__)
 WEB_MAP = {"百度百科": 'baidubaike',
            "维基百科": "wiki",
            "百度": "baidu",
@@ -58,7 +58,7 @@ def start_spiders():
     while True:
         info = {"sites": ['wangyi', 'tengxun']}
         if info is not False:
-            logger.info('TextCrawler On!')
+            # logger.info('TextCrawler On!')
             if info is not None:
                 sites = info['sites']
                 spiders_count = len(sites)
