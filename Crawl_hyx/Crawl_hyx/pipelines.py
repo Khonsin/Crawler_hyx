@@ -155,6 +155,32 @@ class BaidubaikePipeline:
             self.file.write(str(self.count))
             self.file.close()
 
+class WikiPipeline:
+    def __init__(self):
+        self.tag = 'wiki'
+        self.file = CreatePath(SavePath, self.tag)
+        self.data = []
+        self.count = 0
+        self.first = True
+
+    def process_item(self, item, spider):
+        if self.first:
+            # self.count_file = create_count_file(SavePath, self.tag, item["keyword"])
+            self.first = False
+        detail_ = {"情报源": item["source"], "情报源注册时长": item["regTime"], "情报源关注者数目": item["followNum"], "文章标题": item["title"],
+                   "转自何处": item["fromWhere"], "文章作者": item["author"], "最后编辑时间": item["pubTime"], "爬取时间": item["timestamp"],
+                   "文章正文": item["content"], "属性": item['attributes'], "阅读数": item["readNum"], "转发数": item["retweetNum"], "链接": item["url"]}
+        self.data.append(detail_)
+        self.count += 1
+        return item
+
+
+    def close_spider(self, spider):
+        json.dump(self.data, self.file, indent=4, ensure_ascii=False)
+        self.file.close()
+        if self.first is False:
+            self.file.write(str(self.count))
+            self.file.close()
 
 class ImagePipeline(ImagesPipeline):
     #图片地址请求

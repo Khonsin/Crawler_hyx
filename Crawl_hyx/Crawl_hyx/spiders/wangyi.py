@@ -23,9 +23,10 @@ class WangyiSpider(scrapy.Spider):
     }
 
     #实例化一个浏览器对象
-    def __init__(self):
+    def __init__(self, **kwargs):
         # self.bro = webdriver.Chrome(executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
         # self.bro = webdriver.Chrome(r'D:\Python\Crawler_hyx\chromedriver.exe')
+        super().__init__(**kwargs)
         self.start_urls = ['http://war.163.com/']
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')  # 使用无头谷歌浏览器模式
