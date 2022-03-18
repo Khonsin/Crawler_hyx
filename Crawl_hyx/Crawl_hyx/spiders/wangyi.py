@@ -18,8 +18,7 @@ class WangyiSpider(scrapy.Spider):
     # start_urls = ['http://war.163.com/']
     # url_list = []
     custom_settings = {
-        'ITEM_PIPELINES': {'Crawl_hyx.pipelines.WangyiPipeline': 400,
-                            'Crawl_hyx.pipelines.ImagePipeline': 500},
+        'ITEM_PIPELINES': {'Crawl_hyx.pipelines.WangyiPipeline': 400},
     }
 
     #实例化一个浏览器对象
@@ -29,11 +28,11 @@ class WangyiSpider(scrapy.Spider):
         super().__init__(**kwargs)
         self.start_urls = ['http://war.163.com/']
         options = webdriver.ChromeOptions()
-        options.add_argument('--headless')  # 使用无头谷歌浏览器模式
+        # options.add_argument('--headless')  # 使用无头谷歌浏览器模式
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
         # 设置chrome浏览器无界面模式
-        options.add_argument('--headless')
+        # options.add_argument('--headless')
         self.bro = webdriver.Chrome(options=options,executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
         # browser.maximize_window()  # 浏览器窗口最大化
         self.bro.implicitly_wait(1)  # 隐形等待10秒
@@ -49,8 +48,8 @@ class WangyiSpider(scrapy.Spider):
         while t and (end1 - start) < 5:
             check_height = self.bro.execute_script("return document.body.scrollHeight;")
             for r in range(6):
-                time.sleep(2)
-                self.bro.execute_script("window.scrollBy(0,1000)")
+                time.sleep(1)
+                self.bro.execute_script("window.scrollBy(0,5000)")
             check_height1 = self.bro.execute_script("return document.body.scrollHeight;")
             end1 = time.time()
             if check_height == check_height1:
@@ -82,7 +81,8 @@ class WangyiSpider(scrapy.Spider):
 
     #解析新闻内容
     def parse_detail(self, response):
-        title = response.xpath('//*[@id="contain"]/div[1]/h1//text()').extract_first()
+        item = WangyiItem()
+        title = response.xpath('//*[@id="contain"]/div[2]/h1//text()').extract_first()
         # content = response.xpath('//*[@id="content"]/div[2]//text()').extract()
         # content = ''.join(content)
         try:
@@ -96,19 +96,21 @@ class WangyiSpider(scrapy.Spider):
                 cont = content1.replace('\"', '\'')
                 content = cont.replace('\\', '')
                 content = content.replace(' ', '')
+                item['content'] = content
         except:
             content = ""
+            item['content'] = content
         followNum = response.xpath('//*[@id="contain"]/div[2]/div[1]/div[4]/span[2]/a/em//text()').extract_first()
         author = response.xpath('//*[@id="contain"]/div[1]/div[2]/a[1]//text()').extract_first()
         pubTime = response.xpath('//*[@id="contain"]/div[1]/div[2]//text()').extract_first()
-        pubTime = pubTime.replace('\n', '')
-        pubTime = pubTime.replace(' ', '')
+        # pubTime = pubTime.replace('\n', '')
+        # pubTime = pubTime.replace(' ', '')
         readNum = response.xpath('//*[@id="tieArea"]/div[1]/div/a[2]//text()').extract_first()
         retweetNum = response.xpath('//*[@id="tieArea"]/div[1]/div/a[1]//text()').extract_first()
         url = response.xpath('//*[@id="ne_wrap"]/head/link[5]/@href').extract_first()
         # print(response.text)
 
-        item = WangyiItem()
+
         item['source'] = '网易军事'
         item['regTime'] = ''
         item['title'] = title
@@ -117,7 +119,6 @@ class WangyiSpider(scrapy.Spider):
         item['author'] = author
         item['pubTime'] = pubTime
         item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
-        item['content'] = content
         item['readNum'] = readNum
         item['retweetNum'] = retweetNum
         item['url'] = url

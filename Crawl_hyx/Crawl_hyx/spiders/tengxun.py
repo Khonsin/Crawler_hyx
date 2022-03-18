@@ -44,15 +44,16 @@ class TengxunSpider(scrapy.Spider):
         t = True
         while t and (end1 - start) < 5:
             check_height = self.bro.execute_script("return document.body.scrollHeight;")
-            for r in range(6):
-                time.sleep(2)
-                self.bro.execute_script("window.scrollBy(0,1000)")
+            for r in range(15):
+                time.sleep(1)
+                self.bro.execute_script("window.scrollBy(0,2000)")
             check_height1 = self.bro.execute_script("return document.body.scrollHeight;")
             end1 = time.time()
             if check_height == check_height1:
                 t = False
                 print('t:'+t)
 
+        time.sleep(1)
         # print(response.text)
         li_list = response.xpath('//*[@id="hot_scroll"]/li')
         for li in li_list:
