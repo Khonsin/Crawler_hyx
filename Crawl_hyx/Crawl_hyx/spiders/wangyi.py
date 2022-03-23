@@ -32,7 +32,7 @@ class WangyiSpider(scrapy.Spider):
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
         # 设置chrome浏览器无界面模式
-        # options.add_argument('--headless')
+        options.add_argument('--headless')
         self.bro = webdriver.Chrome(options=options,executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
         # browser.maximize_window()  # 浏览器窗口最大化
         self.bro.implicitly_wait(1)  # 隐形等待10秒
