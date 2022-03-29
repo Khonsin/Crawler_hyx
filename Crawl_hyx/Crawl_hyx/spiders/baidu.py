@@ -1,4 +1,5 @@
 import datetime
+import time
 from time import sleep
 
 import requests
@@ -19,7 +20,7 @@ class BaiduSpider(scrapy.Spider):
         # self.bro = webdriver.Chrome(executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
         super().__init__(*args, **kwargs)
         self.errback_httpbin = None
-        self.keyword = '美国军事'
+        self.keyword = '俄乌'
         self.start_urls = ["https://www.baidu.com/"]
         self.url_list = []
         self.number = -1
@@ -35,6 +36,8 @@ class BaiduSpider(scrapy.Spider):
         options.add_experimental_option('useAutomationExtension', False)
         # 设置chrome浏览器无界面模式
         # options.add_argument('--headless')
+        options.add_argument('--disable-gpu')
+        options.add_argument('--no-sandbox')
         self.bro = webdriver.Chrome(options=options, executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
         self.bro.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument",
                             {'source': 'Object.defineProperty(navigator,"webdriver",{get:()=>undefind})'})
@@ -50,7 +53,7 @@ class BaiduSpider(scrapy.Spider):
         self.bro.get(response.url)
         # 搜索框定位交互
         search_input = self.bro.find_element(By.ID, 'kw')
-        search_input.send_keys('美国军事')
+        search_input.send_keys('俄乌')  # self.keyword
         # 点击搜索按钮
         btn = self.bro.find_element(By.XPATH, '//*[@id="su"]')
         btn.click()
@@ -62,64 +65,51 @@ class BaiduSpider(scrapy.Spider):
         # sleep(5)
 
         # 一页全爬
-        div_list = self.bro.find_elements(By.XPATH, '//*[@id="content_left"]/div[2]/div')
-        for div in div_list:
-            url = div.find_element(By.XPATH, './div/h3/a')
-            url = url.get_attribute("href")
-            print(url)
-            item = BaiduItem()
-            item['url'] = url
-            #获取页面详情
-            # self.bro.get(url)
-            # sleep(5)
-            type = div.find_element(By.XPATH, './div/div/div/div/span').text
-            print('type:'+type)
-            item['source'] = type
+        div_list = self.bro.find_elements(By.XPATH, '//*[@id="content_left"]/div')
+        for div in div_list[1:]:
+            try:
+                url = div.find_element(By.XPATH, "./div/h3/a")
+                url = url.get_attribute("href")
+                # print(url)
+                item = BaiduItem()
+                item['url'] = url
+                # 获取页面详情
+                # self.bro.get(url)
+                # sleep(5)
+                type1 = div.find_element(By.XPATH, './div/div/div/div/a[1]/span').text
+                # print('type:'+type1)
+                item['source'] = type1
+            except Exception:
+                print("出错了")
             # if type == '澎湃新闻':
             #     print('456')
             #     # yield scrapy.Request(url=url, callback=self.parse_pengpai, meta={'item': item})
             # elif type == '新浪军事':
             #     # yield scrapy.Request(url=url, callback=self.parse_xinlang, meta={'item': item})
             #     print('123')
-            yield scrapy.Request(url=url, callback=self.parse_url, meta={'item': item})
+            # if item['source'] == '国际在线':
+            #     url = url
+            # else:
+            #     url = url.replace('http', 'https')
+            #     try:
+            #         url = url.replace('httpss', 'https')
+            #     except:
+            #         url = url
+            # print(url)
+            self.bro.set_window_size(1200, 800)
+            time.sleep(1)
+            self.bro.set_window_size(1000, 800)
+            time.sleep(2)
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36',
+                       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}
+            yield scrapy.Request(url=url, callback=self.parse_url, meta={'item': item}, headers=headers)
 
     def parse_url(self, response):
         print(response.url)
         item = response.meta['item']
         print(item['source'])
-        if item['source'] == '澎湃新闻' or item['source'] == '新华网' or item['source'] == '第一财经' or item['source'] == '财联社' or item['source'] == '兵器世界':
-            title = response.xpath('//*[@id="ssr-content"]/div[2]/div[1]/div/div[1]//text()').extract_first()
-            item['title'] = title
-            print(item['title'])
-            author = response.xpath('//*[@id="ssr-content"]/div[2]/div[1]/div/div[2]/div[2]/a/p//text()').extract_first()
-            item['author'] = author
-            pubTime = response.xpath('//*[@id="ssr-content"]/div[2]/div[1]/div/div[2]/div[2]/div/span[1]//text()').extract_first()
-            item['pubTime'] = pubTime
-            try:
-                cont = ''
-                contentlist = response.xpath('//*[@id="ssr-content"]/div[2]/div[2]/div[1]/div[1]/div')
-                for con in contentlist:
-                    cont = cont + con.xpath('./p/span//text()').extract_first()
-                if cont:
-                    content1 = cont.replace('\n', '')
-                    cont = content1.replace('\r', '')
-                    content1 = cont.replace(chr(10), ' ')
-                    cont = content1.replace('\"', '\'')
-                    content = cont.replace('\\', '')
-                    item['content'] = content
-            except:
-                content = ""
-                item['content'] = content
 
-            item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
-            item['regTime'] = ''
-            item['followNum'] = ''
-            item['fromWhere'] = ''
-            item['readNum'] = ''
-            item['retweetNum'] = ''
-            yield item
-
-        elif item['source'] == '网易':
+        if item['source'] == '网易':
             title = response.xpath('//*[@id="contain"]/div[1]/h1//text()').extract_first()
             item['title'] = title
             author = response.xpath('//*[@id="contain"]/div[1]/div[2]/a[1]//text()').extract_first()
@@ -128,6 +118,8 @@ class BaiduSpider(scrapy.Spider):
             item['pubTime'] = pubTime
             content = response.xpath('//*[@id="content"]/div[2]//text()').extract()
             content = ''.join(content)
+            if content:
+                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
             item['content'] = content
 
             followNum = response.xpath('//*[@id="contain"]/div[2]/div[1]/div[4]/span[2]/a/em//text()').extract_first()
@@ -150,17 +142,17 @@ class BaiduSpider(scrapy.Spider):
             item['pubTime'] = pubTime
             content = response.xpath('//*[@id="article"]//text()').extract()
             content = ''.join(content)
+            if content:
+                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
             item['content'] = content
 
-            followNum = ''
             readNum = response.xpath('//*[@id="bottom_sina_comment"]/div[1]/div[1]/span[1]/em[2]/a//text()').extract_first()
-            retweetNum = ''
             item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
             item['regTime'] = ''
-            item['followNum'] = followNum
+            item['followNum'] = ''
             item['fromWhere'] = ''
             item['readNum'] = readNum
-            item['retweetNum'] = retweetNum
+            item['retweetNum'] = ''
             yield item
 
         elif item['source'] == '腾讯网':
@@ -172,17 +164,233 @@ class BaiduSpider(scrapy.Spider):
             item['pubTime'] = pubTime
             content = response.xpath('//*[@id="article_body"]/div[1]//text()').extract()
             content = ''.join(content)
+            if content:
+                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
             item['content'] = content
 
-            followNum = ''
-            readNum = ''
-            retweetNum = ''
             item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
             item['regTime'] = ''
-            item['followNum'] = followNum
+            item['followNum'] = ''
             item['fromWhere'] = ''
-            item['readNum'] = readNum
-            item['retweetNum'] = retweetNum
+            item['readNum'] = ''
+            item['retweetNum'] = ''
+            yield item
+
+        elif item['source'] == '新华网客户端':
+            title = response.xpath('/html/body/div[3]/div[3]/div[1]/h1/text()').extract_first()
+            item['title'] = title
+            author = response.xpath('//*[@id="articleEdit"]/span[2]//text()').extract_first()
+            if author:
+                author = author.replace('\n', '')
+            item['author'] = author
+            pubTime = response.xpath('/html/body/div[3]/div[2]/div[1]//text()').extract_first()
+            # pubTime = ''.join(pubTime)
+            # pubTime1 = response.xpath('/html/body/div[4]/div[2]/div[1]//text()').extract()
+            # if pubTime != []:
+            #     item['pubTime'] = pubTime.replace('\n', '')
+            # elif pubTime1 != []:
+            #     item['pubTime'] = pubTime1
+            item['pubTime'] = pubTime.replace('\n', '')
+            content = response.xpath('//*[@id="detail"]//text()').extract()
+            content = ''.join(content)
+            if content:
+                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
+            item['content'] = content
+
+            fromWhere = response.xpath('/html/body/div[3]/div[2]/div[3]//text()').extract_first()
+            item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+            item['regTime'] = ''
+            item['followNum'] = ''
+            item['fromWhere'] = fromWhere
+            item['readNum'] = ''
+            item['retweetNum'] = ''
+            yield item
+
+        elif item['source'] == '央广网':
+            title = response.xpath('//*[@id="main"]/div[2]/div[1]/h1/text()').extract_first()
+            item['title'] = title
+            author = response.xpath('//*[@id="main"]/div[2]/div[2]/div[2]/div[2]/span/text()').extract_first()
+            item['author'] = author
+            pubTime = response.xpath('//*[@id="main"]/div[2]/div[1]/div/span[1]//text()').extract_first()
+            item['pubTime'] = pubTime
+            content = response.xpath('//*[@id="main"]/div[2]/div[2]/div[2]/div[1]//text()').extract()
+            content = ''.join(content)
+            if content:
+                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '').replace('\t', '')
+            item['content'] = content
+
+            fromWhere = response.xpath('//*[@id="main"]/div[2]/div[1]/div/span[2]//text()').extract_first()
+            item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+            item['regTime'] = ''
+            item['followNum'] = ''
+            item['fromWhere'] = fromWhere
+            item['readNum'] = ''
+            item['retweetNum'] = ''
+            yield item
+
+        elif item['source'] == '光明网':
+            title = response.xpath('//*[@id="title"]/text()').extract_first()
+            item['title'] = title
+            author = '光明网'
+            item['author'] = author
+            pubTime = response.xpath('//*[@id="container"]/div/div[2]/span/text()').extract_first()
+            item['pubTime'] = pubTime
+            content = response.xpath('//*[@id="container"]/article//text()').extract()
+            content = ''.join(content)
+            if content:
+                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
+            item['content'] = content
+
+            item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+            item['regTime'] = ''
+            item['followNum'] = ''
+            item['fromWhere'] = ''
+            item['readNum'] = ''
+            item['retweetNum'] = ''
+            yield item
+
+        elif item['source'] == '国际在线':
+            title = response.xpath('/html/body/article/div/h1/text()').extract_first()
+            item['title'] = title
+            author = response.xpath('/html/body/article/div/div[1]/span[1]/text()').extract_first()
+            item['author'] = author
+            pubTime = response.xpath('/html/body/article/div/div[1]/span[2]/text()').extract_first()
+            item['pubTime'] = pubTime
+            content = response.xpath('/html/body/article/div/div[2]//text()').extract()
+            content = ''.join(content)
+            if content:
+                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
+            item['content'] = content
+
+            item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+            item['regTime'] = ''
+            item['followNum'] = ''
+            item['fromWhere'] = ''
+            item['readNum'] = ''
+            item['retweetNum'] = ''
+            yield item
+
+        elif item['source'] == '央视网':
+            title = response.xpath('//*[@id="title_area"]/h1/text()').extract_first()
+            item['title'] = title
+            author = response.xpath('//*[@id="text_area"]/div//text()').extract()
+            item['author'] = author
+            pubTime = response.xpath('//*[@id="title_area"]/div/span').extract_first()
+            item['pubTime'] = pubTime
+            content = response.xpath('//*[@id="text_area"]//text()').extract()
+            content = ''.join(content)
+            if content:
+                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
+            item['content'] = content
+
+            item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+            item['regTime'] = ''
+            item['followNum'] = ''
+            item['fromWhere'] = ''
+            item['readNum'] = ''
+            item['retweetNum'] = ''
+            yield item
+
+        elif item['source'] == '中国网':
+            title = response.xpath('/html/body/div[2]/h1/text()').extract_first()
+            item['title'] = title
+            author = response.xpath('//*[@id="author_baidu"]/text()').extract_first()
+            item['author'] = author
+            pubTime = response.xpath('//*[@id="pubtime_baidu"]/text()').extract_first()
+            item['pubTime'] = pubTime
+            content = response.xpath('//*[@id="articleBody"]//text()').extract()
+            content = ''.join(content)
+            if content:
+                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
+            item['content'] = content
+
+            fromWhere = response.xpath('//*[@id="source_baidu"]/a/text()').extract_first()
+            item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+            item['regTime'] = ''
+            item['followNum'] = ''
+            item['fromWhere'] = fromWhere
+            item['readNum'] = ''
+            item['retweetNum'] = ''
+            yield item
+
+        elif item['source'] == '上观新闻':
+            title = response.xpath('//*[@id="title"]/text()').extract_first()
+            item['title'] = title
+            author = '上观新闻'
+            item['author'] = author
+            pubTime = response.xpath('//*[@id="container"]/div/div[2]/span/text()').extract_first()
+            item['pubTime'] = pubTime
+            content = response.xpath('//*[@id="container"]/article//text()').extract()
+            content = ''.join(content)
+            if content:
+                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
+            item['content'] = content
+
+            item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+            item['regTime'] = ''
+            item['followNum'] = ''
+            item['fromWhere'] = ''
+            item['readNum'] = ''
+            item['retweetNum'] = ''
+            yield item
+
+        elif item['source'] == '澎湃新闻客户端':
+            title = response.xpath('//*[@id="title"]/text()').extract_first()
+            item['title'] = title
+            author = '澎湃新闻'
+            item['author'] = author
+            pubTime = response.xpath('//*[@id="container"]/div/div[2]/span/text()').extract_first()
+            item['pubTime'] = pubTime
+            content = response.xpath('//*[@id="container"]/article//text()').extract()
+            content = ''.join(content)
+            if content:
+                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
+            item['content'] = content
+
+            item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+            item['regTime'] = ''
+            item['followNum'] = ''
+            item['fromWhere'] = ''
+            item['readNum'] = ''
+            item['retweetNum'] = ''
+            yield item
+
+        else: # item['source'] == '澎湃新闻' or item['source'] == '新华网' or item['source'] == '第一财经' or item['source'] == '财联社' or item['source'] == '兵器世界' or item['source'] == '海外网' or item['source'] == '潇湘晨报' or item['source'] == '九派新闻' or item['source'] == '排头国际视野' or item['source'] == '经济观察报' or item['source'] == '东方之星V':
+            title = response.xpath('//*[@id="ssr-content"]/div[2]/div/div[1]/div[1]/div/div[1]/text()').extract_first()
+            item['title'] = title
+            print(item['title'])
+            author = response.xpath('//*[@id="ssr-content"]/div[2]/div/div[1]/div[1]/div/div[2]/div[2]/a/p/text()').extract_first()
+            item['author'] = author
+            pubTime = response.xpath('//*[@id="ssr-content"]/div[2]/div/div[1]/div[1]/div/div[2]/div[2]/div/span[1]//text()').extract_first()
+            item['pubTime'] = pubTime
+            content = response.xpath('//*[@id="ssr-content"]/div[2]/div/div[1]/div[2]/div[1]//text()').extract()
+            content = ''.join(content)
+            if content:
+                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace(
+                    '\\', '')
+            item['content'] = content
+            # try:
+            #     cont = ''
+            #     contentlist = response.xpath('//*[@id="ssr-content"]/div[2]/div/div[1]/div[2]/div[1]/div')
+            #     for con in contentlist:
+            #         cont = cont + con.xpath('./p/span//text()').extract_first()
+            #     if cont:
+            #         content1 = cont.replace('\n', '')
+            #         cont = content1.replace('\r', '')
+            #         content1 = cont.replace(chr(10), ' ')
+            #         cont = content1.replace('\"', '\'')
+            #         content = cont.replace('\\', '')
+            #         item['content'] = content
+            # except:
+            #     content = ""
+            #     item['content'] = content
+
+            item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+            item['regTime'] = ''
+            item['followNum'] = ''
+            item['fromWhere'] = ''
+            item['readNum'] = ''
+            item['retweetNum'] = ''
             yield item
 
     def closed(self, spider):

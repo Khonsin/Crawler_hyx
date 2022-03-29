@@ -101,12 +101,12 @@ class WangyiSpider(scrapy.Spider):
             content = ""
             item['content'] = content
         followNum = response.xpath('//*[@id="contain"]/div[2]/div[1]/div[4]/span[2]/a/em//text()').extract_first()
-        author = response.xpath('//*[@id="contain"]/div[1]/div[2]/a[1]//text()').extract_first()
-        pubTime = response.xpath('//*[@id="contain"]/div[1]/div[2]//text()').extract_first()
+        author = response.xpath('//*[@id="contain"]/div[2]/div[2]/a[1]/text()').extract_first()
+        pubTime = response.xpath('//*[@id="contain"]/div[2]/div[2]/text()[1]').extract_first()
         # pubTime = pubTime.replace('\n', '')
         # pubTime = pubTime.replace(' ', '')
         readNum = response.xpath('//*[@id="tieArea"]/div[1]/div/a[2]//text()').extract_first()
-        retweetNum = response.xpath('//*[@id="tieArea"]/div[1]/div/a[1]//text()').extract_first()
+        retweetNum = response.xpath('//*[@id="tieArea"]/div[1]/div/a[2]//text()').extract_first()
         url = response.xpath('//*[@id="ne_wrap"]/head/link[5]/@href').extract_first()
         # print(response.text)
 
