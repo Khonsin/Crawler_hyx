@@ -48,7 +48,7 @@ def stop(*args, **kwargs):
             pass
 
 
-def start_spiders():
+def start_spiders(info):
     """
     启动爬虫
 
@@ -56,18 +56,20 @@ def start_spiders():
     """
 
     while True:
-        info = {"sites": ['wangyi', 'tengxun']}
+        keywords = info['keywords']
+        info = {"sites": ['wangyi', 'tengxun'], "keywords": keywords}
         if info is not False:
             # logger.info('TextCrawler On!')
             if info is not None:
                 sites = info['sites']
-                spiders_count = len(sites)
+                spiders_count = len(keywords) * len(sites)
                 configure_logging()
                 runner = CrawlerRunner(get_project_settings())
-                for site in sites:
-                    runner.crawl(site, spiders_count=spiders_count)
-                    d = runner.join()
-                    d.addBoth(stop)
+                for keyword in keywords:
+                    for site in sites:
+                        runner.crawl(site, keyword=keyword, spiders_count=spiders_count)
+                        d = runner.join()
+                        d.addBoth(stop)
 
                 reactor.run()
             break
@@ -79,6 +81,7 @@ def start_spiders():
 
 if __name__ == '__main__':
     'TODO:'
-    start_spiders()
+    info = {"keywords": "俄乌"}
+    start_spiders(info=info)
 
     

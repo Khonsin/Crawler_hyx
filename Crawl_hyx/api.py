@@ -18,13 +18,13 @@ def homepage():
 def start_textCrawler():
     # status = request.values['status']
     # crawl_id = request.values['crawl_id']
-    # keywords = request.values['keywords']
+    keywords = request.values['keywords']
     # data_type = request.values['data_type']
     # sites = request.values['website']
-    # data_dict = {"crawl_id": crawl_id, "sites": sites, "keywords": keywords}
+    data_dict = {"keywords": keywords}
     # print(data_dict)
-    data_dict = {}
-    start_spiders()
+    # data_dict = {}
+    start_spiders(infos=data_dict)
     return 'success'
 
 @app.route('/text_crawler/stop', methods=['post', 'get'])

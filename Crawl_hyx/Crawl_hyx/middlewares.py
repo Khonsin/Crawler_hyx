@@ -3,6 +3,7 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 import logging
+import random
 import time
 from telnetlib import EC
 
@@ -19,6 +20,32 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
+from .settings import USER_AGENT_LIST
+from scrapy import signals
+import base64
+PROXIES = [
+{'ip_port': '206.161.97.4:31337', 'user_pass': ''},
+# {'ip_port': '77.236.248.215:1256', 'user_pass': ''},
+# {'ip_port': '182.34.136.205:25624', 'user_pass': ''},
+# {'ip_port': '104.129.206.191:8800', 'user_pass': ''},
+# {'ip_port': '74.82.50.155:3128', 'user_pass': ''},
+# {'ip_port': '39.108.71.54:8088', 'user_pass': ''},
+# {'ip_port': '179.255.219.182:8080', 'user_pass': ''},
+# {'ip_port': '93.113.233.73:3128', 'user_pass': ''},
+# {'ip_port': '185.238.239.73:8090', 'user_pass': ''}
+
+]
+
+
+class ProxyMiddleware(object):
+    def process_request(self, request, spider):
+        proxy = random.choice(PROXIES)
+        if proxy['user_pass'] is not None:
+            request.meta['proxy'] = "http://%s" % proxy['ip_port']
+            encoded_user_pass = base64.encodebytes(bytes(proxy['user_pass'], 'utf-8'))
+            request.headers['Proxy-Authorization'] = 'Basic ' + str(encoded_user_pass)
+        else:
+            request.meta['proxy'] = "http://%s" % proxy['ip_port']
 
 class CrawlHyxDownloaderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -43,6 +70,8 @@ class CrawlHyxDownloaderMiddleware:
     #     self.wait = WebDriverWait(self.browser, self.timeout)
 
     def process_request(self, request, spider):
+        # ua = random.choice(USER_AGENT_LIST)
+        # request.headers.setdefault('User-Agent', ua)
         # chrome_options = Options()
         # chrome_options.add_argument('--headless')  # 使用无头谷歌浏览器模式
         # chrome_options.add_argument('--disable-gpu')

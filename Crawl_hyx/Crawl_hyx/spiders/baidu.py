@@ -1,4 +1,5 @@
 import datetime
+import random
 import time
 from time import sleep
 
@@ -7,6 +8,8 @@ import scrapy
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from ..items import BaiduItem
+from ..settings import USER_AGENT_LIST
+from webdriver_manager.chrome import ChromeDriverManager
 
 class BaiduSpider(scrapy.Spider):
     name = 'baidu'
@@ -21,6 +24,8 @@ class BaiduSpider(scrapy.Spider):
         super().__init__(*args, **kwargs)
         self.errback_httpbin = None
         self.keyword = '俄乌'
+        # if 'keyword' in kwargs:
+        #     self.keyword = kwargs['keyword']
         self.start_urls = ["https://www.baidu.com/"]
         self.url_list = []
         self.number = -1
@@ -38,7 +43,8 @@ class BaiduSpider(scrapy.Spider):
         # options.add_argument('--headless')
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
-        self.bro = webdriver.Chrome(options=options, executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
+        # self.bro = webdriver.Chrome(options=options, executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
+        self.bro = webdriver.Chrome(ChromeDriverManager().install())
         self.bro.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument",
                             {'source': 'Object.defineProperty(navigator,"webdriver",{get:()=>undefind})'})
         # browser.maximize_window()  # 浏览器窗口最大化
@@ -48,12 +54,16 @@ class BaiduSpider(scrapy.Spider):
     #     for u in self.start_urls:
     #         yield scrapy.Request(url = u, callback=self.parse, errback=self.errback_httpbin, dont_filter=True)
 
+    def get_proxy(self):
+        # 5000：settings中设置的监听端口，不是Redis服务的端口
+        return requests.get("http://127.0.0.1:5010/get/").json()
+
     def parse(self, response):
         self.number += 1
         self.bro.get(response.url)
         # 搜索框定位交互
         search_input = self.bro.find_element(By.ID, 'kw')
-        search_input.send_keys('俄乌')  # self.keyword
+        search_input.send_keys(self.keyword)  # self.keyword
         # 点击搜索按钮
         btn = self.bro.find_element(By.XPATH, '//*[@id="su"]')
         btn.click()
@@ -67,47 +77,30 @@ class BaiduSpider(scrapy.Spider):
         # 一页全爬
         div_list = self.bro.find_elements(By.XPATH, '//*[@id="content_left"]/div')
         for div in div_list[1:]:
-            try:
-                url = div.find_element(By.XPATH, "./div/h3/a")
-                url = url.get_attribute("href")
-                # print(url)
-                item = BaiduItem()
-                item['url'] = url
-                # 获取页面详情
-                # self.bro.get(url)
-                # sleep(5)
-                type1 = div.find_element(By.XPATH, './div/div/div/div/a[1]/span').text
-                # print('type:'+type1)
-                item['source'] = type1
-            except Exception:
-                print("出错了")
-            # if type == '澎湃新闻':
-            #     print('456')
-            #     # yield scrapy.Request(url=url, callback=self.parse_pengpai, meta={'item': item})
-            # elif type == '新浪军事':
-            #     # yield scrapy.Request(url=url, callback=self.parse_xinlang, meta={'item': item})
-            #     print('123')
-            # if item['source'] == '国际在线':
-            #     url = url
-            # else:
-            #     url = url.replace('http', 'https')
-            #     try:
-            #         url = url.replace('httpss', 'https')
-            #     except:
-            #         url = url
+            url = div.find_element(By.XPATH, "./div/h3/a")
+            url = url.get_attribute("href")
             # print(url)
-            self.bro.set_window_size(1200, 800)
-            time.sleep(1)
-            self.bro.set_window_size(1000, 800)
+            item = BaiduItem()
+            item['url'] = url
+            # 获取页面详情
+            # self.bro.get(url)
+            # sleep(5)
+            type1 = div.find_element(By.XPATH, './div/div/div/div/a[1]/span').text
+            # print('type:'+type1)
+            item['source'] = type1
+
             time.sleep(2)
-            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36',
+            ua = random.choice(USER_AGENT_LIST)
+            headers = {'User-Agent': ua,
                        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}
+            print(url)
+            proxy = self.get_proxy().get("proxy")
             yield scrapy.Request(url=url, callback=self.parse_url, meta={'item': item}, headers=headers)
 
     def parse_url(self, response):
         print(response.url)
         item = response.meta['item']
-        print(item['source'])
+        # print(item['source'])
 
         if item['source'] == '网易':
             title = response.xpath('//*[@id="contain"]/div[1]/h1//text()').extract_first()
@@ -249,26 +242,26 @@ class BaiduSpider(scrapy.Spider):
             item['retweetNum'] = ''
             yield item
 
-        elif item['source'] == '国际在线':
-            title = response.xpath('/html/body/article/div/h1/text()').extract_first()
-            item['title'] = title
-            author = response.xpath('/html/body/article/div/div[1]/span[1]/text()').extract_first()
-            item['author'] = author
-            pubTime = response.xpath('/html/body/article/div/div[1]/span[2]/text()').extract_first()
-            item['pubTime'] = pubTime
-            content = response.xpath('/html/body/article/div/div[2]//text()').extract()
-            content = ''.join(content)
-            if content:
-                content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
-            item['content'] = content
-
-            item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
-            item['regTime'] = ''
-            item['followNum'] = ''
-            item['fromWhere'] = ''
-            item['readNum'] = ''
-            item['retweetNum'] = ''
-            yield item
+        # elif item['source'] == '国际在线':
+        #     title = response.xpath('/html/body/article/div/h1/text()').extract_first()
+        #     item['title'] = title
+        #     author = response.xpath('/html/body/article/div/div[1]/span[1]/text()').extract_first()
+        #     item['author'] = author
+        #     pubTime = response.xpath('/html/body/article/div/div[1]/span[2]/text()').extract_first()
+        #     item['pubTime'] = pubTime
+        #     content = response.xpath('/html/body/article/div/div[2]//text()').extract()
+        #     content = ''.join(content)
+        #     if content:
+        #         content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
+        #     item['content'] = content
+        #
+        #     item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+        #     item['regTime'] = ''
+        #     item['followNum'] = ''
+        #     item['fromWhere'] = ''
+        #     item['readNum'] = ''
+        #     item['retweetNum'] = ''
+        #     yield item
 
         elif item['source'] == '央视网':
             title = response.xpath('//*[@id="title_area"]/h1/text()').extract_first()
@@ -358,10 +351,10 @@ class BaiduSpider(scrapy.Spider):
         else: # item['source'] == '澎湃新闻' or item['source'] == '新华网' or item['source'] == '第一财经' or item['source'] == '财联社' or item['source'] == '兵器世界' or item['source'] == '海外网' or item['source'] == '潇湘晨报' or item['source'] == '九派新闻' or item['source'] == '排头国际视野' or item['source'] == '经济观察报' or item['source'] == '东方之星V':
             title = response.xpath('//*[@id="ssr-content"]/div[2]/div/div[1]/div[1]/div/div[1]/text()').extract_first()
             item['title'] = title
-            print(item['title'])
+            print("title:"+item['title'])
             author = response.xpath('//*[@id="ssr-content"]/div[2]/div/div[1]/div[1]/div/div[2]/div[2]/a/p/text()').extract_first()
             item['author'] = author
-            pubTime = response.xpath('//*[@id="ssr-content"]/div[2]/div/div[1]/div[1]/div/div[2]/div[2]/div/span[1]//text()').extract_first()
+            pubTime = response.xpath('//*[@id="ssr-content"]/div[2]/div/div[1]/div[1]/div/div[2]/div[2]/div/span[1]/text()').extract_first()
             item['pubTime'] = pubTime
             content = response.xpath('//*[@id="ssr-content"]/div[2]/div/div[1]/div[2]/div[1]//text()').extract()
             content = ''.join(content)
