@@ -57,7 +57,7 @@ def start_spiders(info):
 
     while True:
         keywords = info['keywords']
-        info = {"sites": ['wangyi', 'tengxun'], "keywords": keywords}
+        info = {"sites": ['wangyi', 'tengxun', 'wiki', 'baidubaike', 'baidu'], "keywords": keywords}
         if info is not False:
             # logger.info('TextCrawler On!')
             if info is not None:

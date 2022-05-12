@@ -27,13 +27,16 @@ class WangyiSpider(scrapy.Spider):
         # self.bro = webdriver.Chrome(r'D:\Python\Crawler_hyx\chromedriver.exe')
         super().__init__(**kwargs)
         self.start_urls = ['http://war.163.com/']
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
+        # self.keyword = '俄乌'
         options = webdriver.ChromeOptions()
         # options.add_argument('--headless')  # 使用无头谷歌浏览器模式
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
         # 设置chrome浏览器无界面模式
         options.add_argument('--headless')
-        self.bro = webdriver.Chrome(options=options,executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
+        self.bro = webdriver.Chrome(options=options,executable_path="C:/Users/Administrator/.wdm/drivers/chromedriver/win32/100.0.4896.60/chromedriver.exe")
         # browser.maximize_window()  # 浏览器窗口最大化
         self.bro.implicitly_wait(1)  # 隐形等待10秒
 
@@ -96,10 +99,14 @@ class WangyiSpider(scrapy.Spider):
                 cont = content1.replace('\"', '\'')
                 content = cont.replace('\\', '')
                 content = content.replace(' ', '')
-                item['content'] = content
+                if self.keyword in content:
+                    item['content'] = content
+                else:
+                    yield
         except:
             content = ""
             item['content'] = content
+
         followNum = response.xpath('//*[@id="contain"]/div[2]/div[1]/div[4]/span[2]/a/em//text()').extract_first()
         author = response.xpath('//*[@id="contain"]/div[2]/div[2]/a[1]/text()').extract_first()
         pubTime = response.xpath('//*[@id="contain"]/div[2]/div[2]/text()[1]').extract_first()

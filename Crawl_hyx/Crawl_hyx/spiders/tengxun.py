@@ -7,6 +7,7 @@ from selenium import webdriver
 from ..items import TengxunItem
 import requests
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
 headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36',
@@ -25,12 +26,19 @@ class TengxunSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.start_urls = ['https://new.qq.com/ch/milite/']
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
+        # self.keyword = '俄乌'
         options = webdriver.ChromeOptions()
         # 设置chrome浏览器无界面模式
         options.add_argument('--headless')  # 使用无头谷歌浏览器模式
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
-        self.bro = webdriver.Chrome(options=options, executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
+        self.bro = webdriver.Chrome(options=options, executable_path="C:/Users/Administrator/.wdm/drivers/chromedriver/win32/100.0.4896.60/chromedriver.exe")
+        # self.bro = webdriver.Chrome(ChromeDriverManager().install())
+        # self.bro = webdriver.Chrome(options=options)
+        self.bro.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument",
+                                 {'source': 'Object.defineProperty(navigator,"webdriver",{get:()=>undefind})'})
         # browser.maximize_window()  # 浏览器窗口最大化
         self.bro.implicitly_wait(1)  # 隐形等待10秒
         self.url_list = []
@@ -94,8 +102,13 @@ class TengxunSpider(scrapy.Spider):
                 cont = content1.replace('\"', '\'')
                 content = cont.replace('\\', '')
                 content = content.replace(' ', '')
+                if self.keyword in content:
+                    item['content'] = content
+                else:
+                    yield
         except:
             content = ""
+            item['content'] = content
 
         year = response.xpath('//*[@id="LeftTool"]/div/div[1]/span//text()').extract_first()
         date = response.xpath('//*[@id="LeftTool"]/div/div[2]//text()').extract()
@@ -110,7 +123,7 @@ class TengxunSpider(scrapy.Spider):
         item['followNum'] = ''
         item['fromWhere'] = ''
         item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
-        item['content'] = content
+
         item['pubTime'] = pubTime
         item['readNum'] = ''
         item['retweetNum'] = ''
@@ -132,13 +145,15 @@ class TengxunSpider(scrapy.Spider):
             # print(image_url)
             res = requests.get(image_url, headers=headers)
             data = res.content
-            try:
-                with open(image + '/tengxun/' + title + '(' + str(cnt) + ').jpg', 'wb') as f:
-                    f.write(data)
-                    print('%s下载成功' % title)
-                    f.close()
-            except:
-                break
+            if self.keyword in title:
+                try:
+                    with open(image + '/tengxun/' + title + '(' + str(cnt) + ').jpg', 'wb') as f:
+                        f.write(data)
+                        print('%s下载成功' % title)
+                        f.close()
+                except:
+                    break
+
         # print(img_url)
         item['img_url'] = image_urls
 

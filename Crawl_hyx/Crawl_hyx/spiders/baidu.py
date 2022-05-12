@@ -43,8 +43,8 @@ class BaiduSpider(scrapy.Spider):
         # options.add_argument('--headless')
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
-        # self.bro = webdriver.Chrome(options=options, executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
-        self.bro = webdriver.Chrome(ChromeDriverManager().install())
+        self.bro = webdriver.Chrome(options=options, executable_path="C:/Users/Administrator/.wdm/drivers/chromedriver/win32/100.0.4896.60/chromedriver.exe")
+        # self.bro = webdriver.Chrome(ChromeDriverManager().install())
         self.bro.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument",
                             {'source': 'Object.defineProperty(navigator,"webdriver",{get:()=>undefind})'})
         # browser.maximize_window()  # 浏览器窗口最大化
@@ -90,14 +90,26 @@ class BaiduSpider(scrapy.Spider):
             item['source'] = type1
 
             time.sleep(2)
-            ua = random.choice(USER_AGENT_LIST)
-            headers = {'User-Agent': ua,
-                       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}
+            # ua = random.choice(USER_AGENT_LIST)
+            # headers = {'User-Agent': ua,
+            #            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}
             print(url)
-            proxy = self.get_proxy().get("proxy")
-            yield scrapy.Request(url=url, callback=self.parse_url, meta={'item': item}, headers=headers)
+            # proxy = self.get_proxy().get("proxy")
+            # yield scrapy.Request(url=url, callback=self.parse_url, meta={'item': item, 'proxy': "http://{}".format(proxy)}, headers=headers)
+            yield scrapy.Request(url=url, callback=self.parse_url, meta={'item': item})
+
 
     def parse_url(self, response):
+        # while True:
+        #     passbaidu = 'https://wappass.baidu.com/static/captcha/tuxing.html'
+        #     passbaiduurl = response.url
+        #     if passbaiduurl.startswith(passbaidu):
+        #         print("百度安全验证,等待中......")
+        #         time.sleep(40)
+        #     else:
+        #         break
+
+        self.bro.get(response.url)
         print(response.url)
         item = response.meta['item']
         # print(item['source'])
@@ -170,13 +182,13 @@ class BaiduSpider(scrapy.Spider):
             yield item
 
         elif item['source'] == '新华网客户端':
-            title = response.xpath('/html/body/div[3]/div[3]/div[1]/h1/text()').extract_first()
+            title = response.xpath('/html/body/div[5]/div[2]/div[3]/h1/span[1]/text()').extract_first()
             item['title'] = title
             author = response.xpath('//*[@id="articleEdit"]/span[2]//text()').extract_first()
             if author:
                 author = author.replace('\n', '')
             item['author'] = author
-            pubTime = response.xpath('/html/body/div[3]/div[2]/div[1]//text()').extract_first()
+            pubTime = response.xpath('/html/body/div[5]/div[2]/div[1]//text()').extract()
             # pubTime = ''.join(pubTime)
             # pubTime1 = response.xpath('/html/body/div[4]/div[2]/div[1]//text()').extract()
             # if pubTime != []:
@@ -190,7 +202,7 @@ class BaiduSpider(scrapy.Spider):
                 content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
             item['content'] = content
 
-            fromWhere = response.xpath('/html/body/div[3]/div[2]/div[3]//text()').extract_first()
+            fromWhere = response.xpath('/html/body/div[5]/div[2]/div[2]/text()').extract_first()
             item['timestamp'] = str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
             item['regTime'] = ''
             item['followNum'] = ''
@@ -222,7 +234,7 @@ class BaiduSpider(scrapy.Spider):
             yield item
 
         elif item['source'] == '光明网':
-            title = response.xpath('//*[@id="title"]/text()').extract_first()
+            title = response.xpath('//*[@id="title"]//text()').extract_first()
             item['title'] = title
             author = '光明网'
             item['author'] = author
@@ -266,11 +278,11 @@ class BaiduSpider(scrapy.Spider):
         elif item['source'] == '央视网':
             title = response.xpath('//*[@id="title_area"]/h1/text()').extract_first()
             item['title'] = title
-            author = response.xpath('//*[@id="text_area"]/div//text()').extract()
+            author = response.xpath('//*[@id="page_body"]/div[1]/div[3]/div[1]//text()').extract()
             item['author'] = author
-            pubTime = response.xpath('//*[@id="title_area"]/div/span').extract_first()
+            pubTime = response.xpath('//*[@id="title_area"]/div[1]//text()').extract()
             item['pubTime'] = pubTime
-            content = response.xpath('//*[@id="text_area"]//text()').extract()
+            content = response.xpath('//*[@id="content_area"]//text()').extract()
             content = ''.join(content)
             if content:
                 content = content.replace('\n', '').replace('\r', '').replace(chr(10), ' ').replace('\"', '\'').replace('\\', '')
@@ -287,7 +299,7 @@ class BaiduSpider(scrapy.Spider):
         elif item['source'] == '中国网':
             title = response.xpath('/html/body/div[2]/h1/text()').extract_first()
             item['title'] = title
-            author = response.xpath('//*[@id="author_baidu"]/text()').extract_first()
+            author = response.xpath('/html/body/div[3]/div[1]/div[5]/text()').extract_first()
             item['author'] = author
             pubTime = response.xpath('//*[@id="pubtime_baidu"]/text()').extract_first()
             item['pubTime'] = pubTime

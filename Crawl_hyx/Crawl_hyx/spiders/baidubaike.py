@@ -16,7 +16,9 @@ class BaidubaikeSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # self.allowed_domains = ['www.baike.baidu.com']
-        self.keyword = '美国军事'
+        # self.keyword = '美国军事'
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
         self.start_urls = ["https://baike.baidu.com/item/" + self.keyword]
         self.number = -1
 

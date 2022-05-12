@@ -37,15 +37,15 @@ PROXIES = [
 ]
 
 
-class ProxyMiddleware(object):
-    def process_request(self, request, spider):
-        proxy = random.choice(PROXIES)
-        if proxy['user_pass'] is not None:
-            request.meta['proxy'] = "http://%s" % proxy['ip_port']
-            encoded_user_pass = base64.encodebytes(bytes(proxy['user_pass'], 'utf-8'))
-            request.headers['Proxy-Authorization'] = 'Basic ' + str(encoded_user_pass)
-        else:
-            request.meta['proxy'] = "http://%s" % proxy['ip_port']
+# class ProxyMiddleware(object):
+#     def process_request(self, request, spider):
+#         proxy = random.choice(PROXIES)
+#         if proxy['user_pass'] is not None:
+#             request.meta['proxy'] = "http://%s" % proxy['ip_port']
+#             encoded_user_pass = base64.encodebytes(bytes(proxy['user_pass'], 'utf-8'))
+#             request.headers['Proxy-Authorization'] = 'Basic ' + str(encoded_user_pass)
+#         else:
+#             request.meta['proxy'] = "http://%s" % proxy['ip_port']
 
 class CrawlHyxDownloaderMiddleware:
     # Not all methods need to be defined. If a method is not defined,

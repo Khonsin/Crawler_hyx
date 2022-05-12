@@ -22,7 +22,9 @@ class WikiSpider(scrapy.Spider):
         super().__init__(**kwargs)
         self.allowed_domains = ['en.wikipedia.org']
         # 获取每个关键词的wiki搜索初始网址（第一页）
-        self.keyword = "Russia"
+        # self.keyword = "Russia"
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
         url = "https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=" + self.keyword + "&ns0=1"
         self.start_urls.append(url)
         self.count = 0
