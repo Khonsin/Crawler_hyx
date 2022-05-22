@@ -23,9 +23,9 @@ class BaiduSpider(scrapy.Spider):
         # self.bro = webdriver.Chrome(executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
         super().__init__(*args, **kwargs)
         self.errback_httpbin = None
-        self.keyword = '俄乌'
-        # if 'keyword' in kwargs:
-        #     self.keyword = kwargs['keyword']
+        # self.keyword = '俄乌'
+        if 'keyword' in kwargs:
+            self.keyword = kwargs['keyword']
         self.start_urls = ["https://www.baidu.com/"]
         self.url_list = []
         self.number = -1
@@ -40,7 +40,7 @@ class BaiduSpider(scrapy.Spider):
         options.add_experimental_option('excludeSwitches', ['enable-automation'])
         options.add_experimental_option('useAutomationExtension', False)
         # 设置chrome浏览器无界面模式
-        # options.add_argument('--headless')
+        options.add_argument('--headless')
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
         self.bro = webdriver.Chrome(options=options, executable_path="C:/Users/Administrator/.wdm/drivers/chromedriver/win32/100.0.4896.60/chromedriver.exe")

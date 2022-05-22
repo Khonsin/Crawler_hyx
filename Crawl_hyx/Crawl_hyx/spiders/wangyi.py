@@ -31,7 +31,7 @@ class WangyiSpider(scrapy.Spider):
             self.keyword = kwargs['keyword']
         # self.keyword = '俄乌'
         options = webdriver.ChromeOptions()
-        # options.add_argument('--headless')  # 使用无头谷歌浏览器模式
+        options.add_argument('--headless')  # 使用无头谷歌浏览器模式
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
         # 设置chrome浏览器无界面模式

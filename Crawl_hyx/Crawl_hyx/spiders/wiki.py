@@ -22,7 +22,7 @@ class WikiSpider(scrapy.Spider):
         super().__init__(**kwargs)
         self.allowed_domains = ['en.wikipedia.org']
         # 获取每个关键词的wiki搜索初始网址（第一页）
-        # self.keyword = "Russia"
+        # self.keyword = "俄乌"
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
         url = "https://en.wikipedia.org/w/index.php?title=Special:Search&limit=20&offset=0&profile=default&search=" + self.keyword + "&ns0=1"
@@ -35,7 +35,9 @@ class WikiSpider(scrapy.Spider):
         options.add_argument('--no-sandbox')
         # 设置chrome浏览器无界面模式
         options.add_argument('--headless')
-        self.bro = webdriver.Chrome(options=options, executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
+        self.bro = webdriver.Chrome(options=options,
+                                    executable_path="C:/Users/Administrator/.wdm/drivers/chromedriver/win32/100.0.4896.60/chromedriver.exe")
+
         # browser.maximize_window()  # 浏览器窗口最大化
         self.bro.implicitly_wait(1)  # 隐形等待10秒
 

@@ -16,7 +16,7 @@ class BaidubaikeSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # self.allowed_domains = ['www.baike.baidu.com']
-        # self.keyword = '美国军事'
+        # self.keyword = '俄乌'
         if 'keyword' in kwargs:
             self.keyword = kwargs['keyword']
         self.start_urls = ["https://baike.baidu.com/item/" + self.keyword]
@@ -31,7 +31,9 @@ class BaidubaikeSpider(scrapy.Spider):
         options.add_experimental_option('prefs', prefs)
         # 设置chrome浏览器无界面模式
         options.add_argument('--headless')
-        self.bro = webdriver.Chrome(options=options, executable_path='D:\Python\Crawler_hyx\chromedriver.exe')
+        self.bro = webdriver.Chrome(options=options,
+                                    executable_path="C:/Users/Administrator/.wdm/drivers/chromedriver/win32/100.0.4896.60/chromedriver.exe")
+
         # browser.maximize_window()  # 浏览器窗口最大化
         self.bro.implicitly_wait(1)  # 隐形等待10秒
 
